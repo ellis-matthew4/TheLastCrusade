@@ -4,12 +4,16 @@ extends Node2D
 #var menu = preload(globs.path)
 var scene
 var player = preload("res://assets/scenes/player.tscn")
+var priest = preload("res://assets/scenes/priest.tscn")
 
 #The default constructor of the scene manager, links the starting scene to the switch() method
 func _ready():
 	var p = player.instance()
 	add_child(p)
 	p.position = Vector2(100,100)
+	var k = priest.instance()
+	add_child(k)
+	k.position = Vector2(200,100)
 	#scene = menu.instance()
 	#scene.connect("Switch", self, "switch")
 	#dd_child(scene)
