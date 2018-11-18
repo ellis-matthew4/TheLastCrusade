@@ -1,13 +1,37 @@
-[gd_resource type="TileSet" load_steps=3 format=2]
+[gd_resource type="TileSet" load_steps=8 format=2]
 
 [ext_resource path="res://assets/tiles/dungeon_tiles.png" type="Texture" id=1]
 
+[sub_resource type="NavigationPolygon" id=1]
 
+vertices = PoolVector2Array( 6, -10, -10, -10, 6, 6, -10, 6 )
+polygons = [ PoolIntArray( 0, 1, 0, 2, 3, 1 ) ]
+outlines = [ PoolVector2Array( 6, -10, -10, -10, 6, -10, 6, 6, -10, 6, -10, -10 ) ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( -5, -8, 5, -8, 6, 1, -6, 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 7 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4, 6 )
 
 [resource]
 
@@ -19,6 +43,7 @@ extents = Vector2( 8, 8 )
 0/is_autotile = false
 0/occluder_offset = Vector2( 8, 8 )
 0/navigation_offset = Vector2( 8, 8 )
+0/navigation = SubResource( 1 )
 0/shapes = [  ]
 1/name = "bigFloor1"
 1/texture = ExtResource( 1 )
@@ -28,6 +53,7 @@ extents = Vector2( 8, 8 )
 1/is_autotile = false
 1/occluder_offset = Vector2( 8, 8 )
 1/navigation_offset = Vector2( 8, 8 )
+1/navigation = SubResource( 1 )
 1/shapes = [  ]
 2/name = "bigFloor2"
 2/texture = ExtResource( 1 )
@@ -37,6 +63,7 @@ extents = Vector2( 8, 8 )
 2/is_autotile = false
 2/occluder_offset = Vector2( 8, 8 )
 2/navigation_offset = Vector2( 8, 8 )
+2/navigation = SubResource( 1 )
 2/shapes = [  ]
 3/name = "bigFloor3"
 3/texture = ExtResource( 1 )
@@ -46,6 +73,7 @@ extents = Vector2( 8, 8 )
 3/is_autotile = false
 3/occluder_offset = Vector2( 8, 8 )
 3/navigation_offset = Vector2( 8, 8 )
+3/navigation = SubResource( 1 )
 3/shapes = [  ]
 4/name = "bigFloor4"
 4/texture = ExtResource( 1 )
@@ -55,6 +83,7 @@ extents = Vector2( 8, 8 )
 4/is_autotile = false
 4/occluder_offset = Vector2( 8, 8 )
 4/navigation_offset = Vector2( 8, 8 )
+4/navigation = SubResource( 1 )
 4/shapes = [  ]
 5/name = "bigFloor5"
 5/texture = ExtResource( 1 )
@@ -64,6 +93,7 @@ extents = Vector2( 8, 8 )
 5/is_autotile = false
 5/occluder_offset = Vector2( 8, 8 )
 5/navigation_offset = Vector2( 8, 8 )
+5/navigation = SubResource( 1 )
 5/shapes = [  ]
 6/name = "bigFloor6"
 6/texture = ExtResource( 1 )
@@ -73,6 +103,7 @@ extents = Vector2( 8, 8 )
 6/is_autotile = false
 6/occluder_offset = Vector2( 8, 8 )
 6/navigation_offset = Vector2( 8, 8 )
+6/navigation = SubResource( 1 )
 6/shapes = [  ]
 7/name = "bigFloor7"
 7/texture = ExtResource( 1 )
@@ -82,6 +113,7 @@ extents = Vector2( 8, 8 )
 7/is_autotile = false
 7/occluder_offset = Vector2( 8, 8 )
 7/navigation_offset = Vector2( 8, 8 )
+7/navigation = SubResource( 1 )
 7/shapes = [  ]
 8/name = "bigFloor8"
 8/texture = ExtResource( 1 )
@@ -91,6 +123,7 @@ extents = Vector2( 8, 8 )
 8/is_autotile = false
 8/occluder_offset = Vector2( 8, 8 )
 8/navigation_offset = Vector2( 8, 8 )
+8/navigation = SubResource( 1 )
 8/shapes = [  ]
 9/name = "bigFloor9"
 9/texture = ExtResource( 1 )
@@ -100,6 +133,7 @@ extents = Vector2( 8, 8 )
 9/is_autotile = false
 9/occluder_offset = Vector2( 8, 8 )
 9/navigation_offset = Vector2( 8, 8 )
+9/navigation = SubResource( 1 )
 9/shapes = [  ]
 10/name = "bigFloor10"
 10/texture = ExtResource( 1 )
@@ -109,6 +143,7 @@ extents = Vector2( 8, 8 )
 10/is_autotile = false
 10/occluder_offset = Vector2( 8, 8 )
 10/navigation_offset = Vector2( 8, 8 )
+10/navigation = SubResource( 1 )
 10/shapes = [  ]
 11/name = "bigFloor11"
 11/texture = ExtResource( 1 )
@@ -118,6 +153,7 @@ extents = Vector2( 8, 8 )
 11/is_autotile = false
 11/occluder_offset = Vector2( 8, 8 )
 11/navigation_offset = Vector2( 8, 8 )
+11/navigation = SubResource( 1 )
 11/shapes = [  ]
 12/name = "bigFloor12"
 12/texture = ExtResource( 1 )
@@ -127,6 +163,7 @@ extents = Vector2( 8, 8 )
 12/is_autotile = false
 12/occluder_offset = Vector2( 8, 8 )
 12/navigation_offset = Vector2( 8, 8 )
+12/navigation = SubResource( 1 )
 12/shapes = [  ]
 13/name = "bigFloor13"
 13/texture = ExtResource( 1 )
@@ -136,6 +173,7 @@ extents = Vector2( 8, 8 )
 13/is_autotile = false
 13/occluder_offset = Vector2( 8, 8 )
 13/navigation_offset = Vector2( 8, 8 )
+13/navigation = SubResource( 1 )
 13/shapes = [  ]
 14/name = "bigFloor14"
 14/texture = ExtResource( 1 )
@@ -145,6 +183,7 @@ extents = Vector2( 8, 8 )
 14/is_autotile = false
 14/occluder_offset = Vector2( 8, 8 )
 14/navigation_offset = Vector2( 8, 8 )
+14/navigation = SubResource( 1 )
 14/shapes = [  ]
 15/name = "bigFloor15"
 15/texture = ExtResource( 1 )
@@ -154,6 +193,7 @@ extents = Vector2( 8, 8 )
 15/is_autotile = false
 15/occluder_offset = Vector2( 8, 8 )
 15/navigation_offset = Vector2( 8, 8 )
+15/navigation = SubResource( 1 )
 15/shapes = [  ]
 16/name = "bigFloor16"
 16/texture = ExtResource( 1 )
@@ -163,6 +203,7 @@ extents = Vector2( 8, 8 )
 16/is_autotile = false
 16/occluder_offset = Vector2( 8, 8 )
 16/navigation_offset = Vector2( 8, 8 )
+16/navigation = SubResource( 1 )
 16/shapes = [  ]
 17/name = "bigFloor17"
 17/texture = ExtResource( 1 )
@@ -172,6 +213,7 @@ extents = Vector2( 8, 8 )
 17/is_autotile = false
 17/occluder_offset = Vector2( 8, 8 )
 17/navigation_offset = Vector2( 8, 8 )
+17/navigation = SubResource( 1 )
 17/shapes = [  ]
 18/name = "bigFloor18"
 18/texture = ExtResource( 1 )
@@ -226,6 +268,7 @@ extents = Vector2( 8, 8 )
 23/is_autotile = false
 23/occluder_offset = Vector2( 8, 8 )
 23/navigation_offset = Vector2( 8, 8 )
+23/navigation = SubResource( 1 )
 23/shapes = [  ]
 24/name = "walkway1"
 24/texture = ExtResource( 1 )
@@ -235,6 +278,7 @@ extents = Vector2( 8, 8 )
 24/is_autotile = false
 24/occluder_offset = Vector2( 8, 8 )
 24/navigation_offset = Vector2( 8, 8 )
+24/navigation = SubResource( 1 )
 24/shapes = [  ]
 25/name = "walkway2"
 25/texture = ExtResource( 1 )
@@ -244,6 +288,7 @@ extents = Vector2( 8, 8 )
 25/is_autotile = false
 25/occluder_offset = Vector2( 8, 8 )
 25/navigation_offset = Vector2( 8, 8 )
+25/navigation = SubResource( 1 )
 25/shapes = [  ]
 26/name = "walkway3"
 26/texture = ExtResource( 1 )
@@ -253,6 +298,7 @@ extents = Vector2( 8, 8 )
 26/is_autotile = false
 26/occluder_offset = Vector2( 8, 8 )
 26/navigation_offset = Vector2( 8, 8 )
+26/navigation = SubResource( 1 )
 26/shapes = [  ]
 27/name = "walkway4"
 27/texture = ExtResource( 1 )
@@ -262,6 +308,7 @@ extents = Vector2( 8, 8 )
 27/is_autotile = false
 27/occluder_offset = Vector2( 8, 8 )
 27/navigation_offset = Vector2( 8, 8 )
+27/navigation = SubResource( 1 )
 27/shapes = [  ]
 28/name = "walkway5"
 28/texture = ExtResource( 1 )
@@ -271,6 +318,7 @@ extents = Vector2( 8, 8 )
 28/is_autotile = false
 28/occluder_offset = Vector2( 8, 8 )
 28/navigation_offset = Vector2( 8, 8 )
+28/navigation = SubResource( 1 )
 28/shapes = [  ]
 29/name = "walkway6"
 29/texture = ExtResource( 1 )
@@ -280,6 +328,7 @@ extents = Vector2( 8, 8 )
 29/is_autotile = false
 29/occluder_offset = Vector2( 8, 8 )
 29/navigation_offset = Vector2( 8, 8 )
+29/navigation = SubResource( 1 )
 29/shapes = [  ]
 30/name = "walkway7"
 30/texture = ExtResource( 1 )
@@ -289,6 +338,7 @@ extents = Vector2( 8, 8 )
 30/is_autotile = false
 30/occluder_offset = Vector2( 8, 8 )
 30/navigation_offset = Vector2( 8, 8 )
+30/navigation = SubResource( 1 )
 30/shapes = [  ]
 31/name = "walkway8"
 31/texture = ExtResource( 1 )
@@ -334,6 +384,7 @@ extents = Vector2( 8, 8 )
 35/is_autotile = false
 35/occluder_offset = Vector2( 8, 8 )
 35/navigation_offset = Vector2( 8, 8 )
+35/navigation = SubResource( 1 )
 35/shapes = [  ]
 36/name = "floor1"
 36/texture = ExtResource( 1 )
@@ -343,6 +394,7 @@ extents = Vector2( 8, 8 )
 36/is_autotile = false
 36/occluder_offset = Vector2( 8, 8 )
 36/navigation_offset = Vector2( 8, 8 )
+36/navigation = SubResource( 1 )
 36/shapes = [  ]
 37/name = "floor2"
 37/texture = ExtResource( 1 )
@@ -352,6 +404,7 @@ extents = Vector2( 8, 8 )
 37/is_autotile = false
 37/occluder_offset = Vector2( 8, 8 )
 37/navigation_offset = Vector2( 8, 8 )
+37/navigation = SubResource( 1 )
 37/shapes = [  ]
 38/name = "floor3"
 38/texture = ExtResource( 1 )
@@ -361,6 +414,7 @@ extents = Vector2( 8, 8 )
 38/is_autotile = false
 38/occluder_offset = Vector2( 8, 8 )
 38/navigation_offset = Vector2( 8, 8 )
+38/navigation = SubResource( 1 )
 38/shapes = [  ]
 39/name = "floor4"
 39/texture = ExtResource( 1 )
@@ -370,6 +424,7 @@ extents = Vector2( 8, 8 )
 39/is_autotile = false
 39/occluder_offset = Vector2( 8, 8 )
 39/navigation_offset = Vector2( 8, 8 )
+39/navigation = SubResource( 1 )
 39/shapes = [  ]
 40/name = "floor5"
 40/texture = ExtResource( 1 )
@@ -379,6 +434,7 @@ extents = Vector2( 8, 8 )
 40/is_autotile = false
 40/occluder_offset = Vector2( 8, 8 )
 40/navigation_offset = Vector2( 8, 8 )
+40/navigation = SubResource( 1 )
 40/shapes = [  ]
 41/name = "floor6"
 41/texture = ExtResource( 1 )
@@ -388,6 +444,7 @@ extents = Vector2( 8, 8 )
 41/is_autotile = false
 41/occluder_offset = Vector2( 8, 8 )
 41/navigation_offset = Vector2( 8, 8 )
+41/navigation = SubResource( 1 )
 41/shapes = [  ]
 42/name = "stairs0"
 42/texture = ExtResource( 1 )
@@ -397,6 +454,7 @@ extents = Vector2( 8, 8 )
 42/is_autotile = false
 42/occluder_offset = Vector2( 8, 8 )
 42/navigation_offset = Vector2( 8, 8 )
+42/navigation = SubResource( 1 )
 42/shapes = [  ]
 43/name = "stairs1"
 43/texture = ExtResource( 1 )
@@ -406,6 +464,7 @@ extents = Vector2( 8, 8 )
 43/is_autotile = false
 43/occluder_offset = Vector2( 8, 8 )
 43/navigation_offset = Vector2( 8, 8 )
+43/navigation = SubResource( 1 )
 43/shapes = [  ]
 44/name = "stairs2"
 44/texture = ExtResource( 1 )
@@ -415,6 +474,7 @@ extents = Vector2( 8, 8 )
 44/is_autotile = false
 44/occluder_offset = Vector2( 8, 8 )
 44/navigation_offset = Vector2( 8, 8 )
+44/navigation = SubResource( 1 )
 44/shapes = [  ]
 45/name = "stairs3"
 45/texture = ExtResource( 1 )
@@ -424,6 +484,7 @@ extents = Vector2( 8, 8 )
 45/is_autotile = false
 45/occluder_offset = Vector2( 8, 8 )
 45/navigation_offset = Vector2( 8, 8 )
+45/navigation = SubResource( 1 )
 45/shapes = [  ]
 46/name = "pool0"
 46/texture = ExtResource( 1 )
@@ -433,6 +494,7 @@ extents = Vector2( 8, 8 )
 46/is_autotile = false
 46/occluder_offset = Vector2( 8, 8 )
 46/navigation_offset = Vector2( 8, 8 )
+46/navigation = SubResource( 1 )
 46/shapes = [  ]
 47/name = "pool1"
 47/texture = ExtResource( 1 )
@@ -442,6 +504,7 @@ extents = Vector2( 8, 8 )
 47/is_autotile = false
 47/occluder_offset = Vector2( 8, 8 )
 47/navigation_offset = Vector2( 8, 8 )
+47/navigation = SubResource( 1 )
 47/shapes = [  ]
 48/name = "pool2"
 48/texture = ExtResource( 1 )
@@ -451,6 +514,7 @@ extents = Vector2( 8, 8 )
 48/is_autotile = false
 48/occluder_offset = Vector2( 8, 8 )
 48/navigation_offset = Vector2( 8, 8 )
+48/navigation = SubResource( 1 )
 48/shapes = [  ]
 49/name = "pool3"
 49/texture = ExtResource( 1 )
@@ -460,6 +524,7 @@ extents = Vector2( 8, 8 )
 49/is_autotile = false
 49/occluder_offset = Vector2( 8, 8 )
 49/navigation_offset = Vector2( 8, 8 )
+49/navigation = SubResource( 1 )
 49/shapes = [  ]
 50/name = "pool4"
 50/texture = ExtResource( 1 )
@@ -469,6 +534,7 @@ extents = Vector2( 8, 8 )
 50/is_autotile = false
 50/occluder_offset = Vector2( 8, 8 )
 50/navigation_offset = Vector2( 8, 8 )
+50/navigation = SubResource( 1 )
 50/shapes = [  ]
 51/name = "pool5"
 51/texture = ExtResource( 1 )
@@ -478,6 +544,7 @@ extents = Vector2( 8, 8 )
 51/is_autotile = false
 51/occluder_offset = Vector2( 8, 8 )
 51/navigation_offset = Vector2( 8, 8 )
+51/navigation = SubResource( 1 )
 51/shapes = [  ]
 52/name = "pool6"
 52/texture = ExtResource( 1 )
@@ -487,6 +554,7 @@ extents = Vector2( 8, 8 )
 52/is_autotile = false
 52/occluder_offset = Vector2( 8, 8 )
 52/navigation_offset = Vector2( 8, 8 )
+52/navigation = SubResource( 1 )
 52/shapes = [  ]
 53/name = "pool7"
 53/texture = ExtResource( 1 )
@@ -496,6 +564,7 @@ extents = Vector2( 8, 8 )
 53/is_autotile = false
 53/occluder_offset = Vector2( 8, 8 )
 53/navigation_offset = Vector2( 8, 8 )
+53/navigation = SubResource( 1 )
 53/shapes = [  ]
 54/name = "pool8"
 54/texture = ExtResource( 1 )
@@ -505,6 +574,7 @@ extents = Vector2( 8, 8 )
 54/is_autotile = false
 54/occluder_offset = Vector2( 8, 8 )
 54/navigation_offset = Vector2( 8, 8 )
+54/navigation = SubResource( 1 )
 54/shapes = [  ]
 55/name = "pool9"
 55/texture = ExtResource( 1 )
@@ -514,6 +584,7 @@ extents = Vector2( 8, 8 )
 55/is_autotile = false
 55/occluder_offset = Vector2( 8, 8 )
 55/navigation_offset = Vector2( 8, 8 )
+55/navigation = SubResource( 1 )
 55/shapes = [  ]
 56/name = "pool10"
 56/texture = ExtResource( 1 )
@@ -523,6 +594,7 @@ extents = Vector2( 8, 8 )
 56/is_autotile = false
 56/occluder_offset = Vector2( 8, 8 )
 56/navigation_offset = Vector2( 8, 8 )
+56/navigation = SubResource( 1 )
 56/shapes = [  ]
 57/name = "pool11"
 57/texture = ExtResource( 1 )
@@ -532,6 +604,7 @@ extents = Vector2( 8, 8 )
 57/is_autotile = false
 57/occluder_offset = Vector2( 8, 8 )
 57/navigation_offset = Vector2( 8, 8 )
+57/navigation = SubResource( 1 )
 57/shapes = [  ]
 58/name = "pool12"
 58/texture = ExtResource( 1 )
@@ -541,6 +614,7 @@ extents = Vector2( 8, 8 )
 58/is_autotile = false
 58/occluder_offset = Vector2( 8, 8 )
 58/navigation_offset = Vector2( 8, 8 )
+58/navigation = SubResource( 1 )
 58/shapes = [  ]
 59/name = "pool13"
 59/texture = ExtResource( 1 )
@@ -550,6 +624,7 @@ extents = Vector2( 8, 8 )
 59/is_autotile = false
 59/occluder_offset = Vector2( 8, 8 )
 59/navigation_offset = Vector2( 8, 8 )
+59/navigation = SubResource( 1 )
 59/shapes = [  ]
 60/name = "pool14"
 60/texture = ExtResource( 1 )
@@ -559,6 +634,7 @@ extents = Vector2( 8, 8 )
 60/is_autotile = false
 60/occluder_offset = Vector2( 8, 8 )
 60/navigation_offset = Vector2( 8, 8 )
+60/navigation = SubResource( 1 )
 60/shapes = [  ]
 61/name = "pool15"
 61/texture = ExtResource( 1 )
@@ -568,6 +644,7 @@ extents = Vector2( 8, 8 )
 61/is_autotile = false
 61/occluder_offset = Vector2( 8, 8 )
 61/navigation_offset = Vector2( 8, 8 )
+61/navigation = SubResource( 1 )
 61/shapes = [  ]
 62/name = "pool16"
 62/texture = ExtResource( 1 )
@@ -577,6 +654,7 @@ extents = Vector2( 8, 8 )
 62/is_autotile = false
 62/occluder_offset = Vector2( 8, 8 )
 62/navigation_offset = Vector2( 8, 8 )
+62/navigation = SubResource( 1 )
 62/shapes = [  ]
 63/name = "pool17"
 63/texture = ExtResource( 1 )
@@ -586,6 +664,7 @@ extents = Vector2( 8, 8 )
 63/is_autotile = false
 63/occluder_offset = Vector2( 8, 8 )
 63/navigation_offset = Vector2( 8, 8 )
+63/navigation = SubResource( 1 )
 63/shapes = [  ]
 64/name = "platform0"
 64/texture = ExtResource( 1 )
@@ -595,6 +674,7 @@ extents = Vector2( 8, 8 )
 64/is_autotile = false
 64/occluder_offset = Vector2( 8, 8 )
 64/navigation_offset = Vector2( 8, 8 )
+64/navigation = SubResource( 1 )
 64/shapes = [  ]
 65/name = "platform1"
 65/texture = ExtResource( 1 )
@@ -604,6 +684,7 @@ extents = Vector2( 8, 8 )
 65/is_autotile = false
 65/occluder_offset = Vector2( 8, 8 )
 65/navigation_offset = Vector2( 8, 8 )
+65/navigation = SubResource( 1 )
 65/shapes = [  ]
 66/name = "platform2"
 66/texture = ExtResource( 1 )
@@ -613,6 +694,7 @@ extents = Vector2( 8, 8 )
 66/is_autotile = false
 66/occluder_offset = Vector2( 8, 8 )
 66/navigation_offset = Vector2( 8, 8 )
+66/navigation = SubResource( 1 )
 66/shapes = [  ]
 67/name = "platform3"
 67/texture = ExtResource( 1 )
@@ -622,6 +704,7 @@ extents = Vector2( 8, 8 )
 67/is_autotile = false
 67/occluder_offset = Vector2( 8, 8 )
 67/navigation_offset = Vector2( 8, 8 )
+67/navigation = SubResource( 1 )
 67/shapes = [  ]
 68/name = "platform4"
 68/texture = ExtResource( 1 )
@@ -631,6 +714,7 @@ extents = Vector2( 8, 8 )
 68/is_autotile = false
 68/occluder_offset = Vector2( 8, 8 )
 68/navigation_offset = Vector2( 8, 8 )
+68/navigation = SubResource( 1 )
 68/shapes = [  ]
 69/name = "canal0"
 69/texture = ExtResource( 1 )
@@ -640,6 +724,7 @@ extents = Vector2( 8, 8 )
 69/is_autotile = false
 69/occluder_offset = Vector2( 8, 8 )
 69/navigation_offset = Vector2( 8, 8 )
+69/navigation = SubResource( 1 )
 69/shapes = [  ]
 70/name = "canal1"
 70/texture = ExtResource( 1 )
@@ -649,6 +734,7 @@ extents = Vector2( 8, 8 )
 70/is_autotile = false
 70/occluder_offset = Vector2( 8, 8 )
 70/navigation_offset = Vector2( 8, 8 )
+70/navigation = SubResource( 1 )
 70/shapes = [  ]
 71/name = "canal2"
 71/texture = ExtResource( 1 )
@@ -658,6 +744,7 @@ extents = Vector2( 8, 8 )
 71/is_autotile = false
 71/occluder_offset = Vector2( 8, 8 )
 71/navigation_offset = Vector2( 8, 8 )
+71/navigation = SubResource( 1 )
 71/shapes = [  ]
 72/name = "canal3"
 72/texture = ExtResource( 1 )
@@ -667,6 +754,7 @@ extents = Vector2( 8, 8 )
 72/is_autotile = false
 72/occluder_offset = Vector2( 8, 8 )
 72/navigation_offset = Vector2( 8, 8 )
+72/navigation = SubResource( 1 )
 72/shapes = [  ]
 73/name = "canal4"
 73/texture = ExtResource( 1 )
@@ -676,6 +764,7 @@ extents = Vector2( 8, 8 )
 73/is_autotile = false
 73/occluder_offset = Vector2( 8, 8 )
 73/navigation_offset = Vector2( 8, 8 )
+73/navigation = SubResource( 1 )
 73/shapes = [  ]
 74/name = "canal5"
 74/texture = ExtResource( 1 )
@@ -685,6 +774,7 @@ extents = Vector2( 8, 8 )
 74/is_autotile = false
 74/occluder_offset = Vector2( 8, 8 )
 74/navigation_offset = Vector2( 8, 8 )
+74/navigation = SubResource( 1 )
 74/shapes = [  ]
 75/name = "canal6"
 75/texture = ExtResource( 1 )
@@ -694,6 +784,7 @@ extents = Vector2( 8, 8 )
 75/is_autotile = false
 75/occluder_offset = Vector2( 8, 8 )
 75/navigation_offset = Vector2( 8, 8 )
+75/navigation = SubResource( 1 )
 75/shapes = [  ]
 76/name = "canal7"
 76/texture = ExtResource( 1 )
@@ -703,6 +794,7 @@ extents = Vector2( 8, 8 )
 76/is_autotile = false
 76/occluder_offset = Vector2( 8, 8 )
 76/navigation_offset = Vector2( 8, 8 )
+76/navigation = SubResource( 1 )
 76/shapes = [  ]
 77/name = "canal8"
 77/texture = ExtResource( 1 )
@@ -712,6 +804,7 @@ extents = Vector2( 8, 8 )
 77/is_autotile = false
 77/occluder_offset = Vector2( 8, 8 )
 77/navigation_offset = Vector2( 8, 8 )
+77/navigation = SubResource( 1 )
 77/shapes = [  ]
 78/name = "canal9"
 78/texture = ExtResource( 1 )
@@ -721,6 +814,7 @@ extents = Vector2( 8, 8 )
 78/is_autotile = false
 78/occluder_offset = Vector2( 8, 8 )
 78/navigation_offset = Vector2( 8, 8 )
+78/navigation = SubResource( 1 )
 78/shapes = [  ]
 79/name = "canal10"
 79/texture = ExtResource( 1 )
@@ -730,6 +824,7 @@ extents = Vector2( 8, 8 )
 79/is_autotile = false
 79/occluder_offset = Vector2( 8, 8 )
 79/navigation_offset = Vector2( 8, 8 )
+79/navigation = SubResource( 1 )
 79/shapes = [  ]
 80/name = "canal11"
 80/texture = ExtResource( 1 )
@@ -739,6 +834,7 @@ extents = Vector2( 8, 8 )
 80/is_autotile = false
 80/occluder_offset = Vector2( 8, 8 )
 80/navigation_offset = Vector2( 8, 8 )
+80/navigation = SubResource( 1 )
 80/shapes = [  ]
 81/name = "canal12"
 81/texture = ExtResource( 1 )
@@ -748,6 +844,7 @@ extents = Vector2( 8, 8 )
 81/is_autotile = false
 81/occluder_offset = Vector2( 8, 8 )
 81/navigation_offset = Vector2( 8, 8 )
+81/navigation = SubResource( 1 )
 81/shapes = [  ]
 82/name = "canal13"
 82/texture = ExtResource( 1 )
@@ -757,6 +854,7 @@ extents = Vector2( 8, 8 )
 82/is_autotile = false
 82/occluder_offset = Vector2( 8, 8 )
 82/navigation_offset = Vector2( 8, 8 )
+82/navigation = SubResource( 1 )
 82/shapes = [  ]
 83/name = "canal14"
 83/texture = ExtResource( 1 )
@@ -766,6 +864,7 @@ extents = Vector2( 8, 8 )
 83/is_autotile = false
 83/occluder_offset = Vector2( 8, 8 )
 83/navigation_offset = Vector2( 8, 8 )
+83/navigation = SubResource( 1 )
 83/shapes = [  ]
 84/name = "path0"
 84/texture = ExtResource( 1 )
@@ -775,6 +874,7 @@ extents = Vector2( 8, 8 )
 84/is_autotile = false
 84/occluder_offset = Vector2( 8, 8 )
 84/navigation_offset = Vector2( 8, 8 )
+84/navigation = SubResource( 1 )
 84/shapes = [  ]
 85/name = "path1"
 85/texture = ExtResource( 1 )
@@ -784,6 +884,7 @@ extents = Vector2( 8, 8 )
 85/is_autotile = false
 85/occluder_offset = Vector2( 8, 8 )
 85/navigation_offset = Vector2( 8, 8 )
+85/navigation = SubResource( 1 )
 85/shapes = [  ]
 86/name = "path2"
 86/texture = ExtResource( 1 )
@@ -793,6 +894,7 @@ extents = Vector2( 8, 8 )
 86/is_autotile = false
 86/occluder_offset = Vector2( 8, 8 )
 86/navigation_offset = Vector2( 8, 8 )
+86/navigation = SubResource( 1 )
 86/shapes = [  ]
 87/name = "path3"
 87/texture = ExtResource( 1 )
@@ -802,6 +904,7 @@ extents = Vector2( 8, 8 )
 87/is_autotile = false
 87/occluder_offset = Vector2( 8, 8 )
 87/navigation_offset = Vector2( 8, 8 )
+87/navigation = SubResource( 1 )
 87/shapes = [  ]
 88/name = "path4"
 88/texture = ExtResource( 1 )
@@ -811,6 +914,7 @@ extents = Vector2( 8, 8 )
 88/is_autotile = false
 88/occluder_offset = Vector2( 8, 8 )
 88/navigation_offset = Vector2( 8, 8 )
+88/navigation = SubResource( 1 )
 88/shapes = [  ]
 89/name = "path5"
 89/texture = ExtResource( 1 )
@@ -820,6 +924,7 @@ extents = Vector2( 8, 8 )
 89/is_autotile = false
 89/occluder_offset = Vector2( 8, 8 )
 89/navigation_offset = Vector2( 8, 8 )
+89/navigation = SubResource( 1 )
 89/shapes = [  ]
 90/name = "path6"
 90/texture = ExtResource( 1 )
@@ -829,6 +934,7 @@ extents = Vector2( 8, 8 )
 90/is_autotile = false
 90/occluder_offset = Vector2( 8, 8 )
 90/navigation_offset = Vector2( 8, 8 )
+90/navigation = SubResource( 1 )
 90/shapes = [  ]
 91/name = "path7"
 91/texture = ExtResource( 1 )
@@ -838,6 +944,7 @@ extents = Vector2( 8, 8 )
 91/is_autotile = false
 91/occluder_offset = Vector2( 8, 8 )
 91/navigation_offset = Vector2( 8, 8 )
+91/navigation = SubResource( 1 )
 91/shapes = [  ]
 92/name = "path8"
 92/texture = ExtResource( 1 )
@@ -847,6 +954,7 @@ extents = Vector2( 8, 8 )
 92/is_autotile = false
 92/occluder_offset = Vector2( 8, 8 )
 92/navigation_offset = Vector2( 8, 8 )
+92/navigation = SubResource( 1 )
 92/shapes = [  ]
 93/name = "path9"
 93/texture = ExtResource( 1 )
@@ -856,6 +964,7 @@ extents = Vector2( 8, 8 )
 93/is_autotile = false
 93/occluder_offset = Vector2( 8, 8 )
 93/navigation_offset = Vector2( 8, 8 )
+93/navigation = SubResource( 1 )
 93/shapes = [  ]
 94/name = "path10"
 94/texture = ExtResource( 1 )
@@ -865,6 +974,7 @@ extents = Vector2( 8, 8 )
 94/is_autotile = false
 94/occluder_offset = Vector2( 8, 8 )
 94/navigation_offset = Vector2( 8, 8 )
+94/navigation = SubResource( 1 )
 94/shapes = [  ]
 95/name = "path11"
 95/texture = ExtResource( 1 )
@@ -874,6 +984,7 @@ extents = Vector2( 8, 8 )
 95/is_autotile = false
 95/occluder_offset = Vector2( 8, 8 )
 95/navigation_offset = Vector2( 8, 8 )
+95/navigation = SubResource( 1 )
 95/shapes = [  ]
 96/name = "path12"
 96/texture = ExtResource( 1 )
@@ -883,6 +994,7 @@ extents = Vector2( 8, 8 )
 96/is_autotile = false
 96/occluder_offset = Vector2( 8, 8 )
 96/navigation_offset = Vector2( 8, 8 )
+96/navigation = SubResource( 1 )
 96/shapes = [  ]
 97/name = "decoration0"
 97/texture = ExtResource( 1 )
@@ -910,7 +1022,12 @@ extents = Vector2( 8, 8 )
 99/is_autotile = false
 99/occluder_offset = Vector2( 8, 8 )
 99/navigation_offset = Vector2( 8, 8 )
-99/shapes = [  ]
+99/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
 100/name = "decoration3"
 100/texture = ExtResource( 1 )
 100/tex_offset = Vector2( 0, 0 )
@@ -919,7 +1036,12 @@ extents = Vector2( 8, 8 )
 100/is_autotile = false
 100/occluder_offset = Vector2( 8, 8 )
 100/navigation_offset = Vector2( 8, 8 )
-100/shapes = [  ]
+100/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
 101/name = "decoration4"
 101/texture = ExtResource( 1 )
 101/tex_offset = Vector2( 0, 0 )
@@ -928,7 +1050,12 @@ extents = Vector2( 8, 8 )
 101/is_autotile = false
 101/occluder_offset = Vector2( 8, 8 )
 101/navigation_offset = Vector2( 8, 8 )
-101/shapes = [  ]
+101/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
 102/name = "decoration5"
 102/texture = ExtResource( 1 )
 102/tex_offset = Vector2( 0, 0 )
@@ -937,7 +1064,12 @@ extents = Vector2( 8, 8 )
 102/is_autotile = false
 102/occluder_offset = Vector2( 8, 8 )
 102/navigation_offset = Vector2( 8, 8 )
-102/shapes = [  ]
+102/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
 103/name = "wall0"
 103/texture = ExtResource( 1 )
 103/tex_offset = Vector2( 0, 0 )
@@ -949,7 +1081,7 @@ extents = Vector2( 8, 8 )
 103/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 104/name = "wall1"
@@ -963,7 +1095,7 @@ extents = Vector2( 8, 8 )
 104/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 105/name = "wall2"
@@ -977,7 +1109,7 @@ extents = Vector2( 8, 8 )
 105/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 106/name = "wall3"
@@ -991,7 +1123,7 @@ extents = Vector2( 8, 8 )
 106/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 107/name = "wall4"
@@ -1005,7 +1137,7 @@ extents = Vector2( 8, 8 )
 107/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 108/name = "wall5"
@@ -1019,7 +1151,7 @@ extents = Vector2( 8, 8 )
 108/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 109/name = "wall6"
@@ -1033,7 +1165,7 @@ extents = Vector2( 8, 8 )
 109/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 

@@ -1,12 +1,24 @@
-extends KinematicBody2D
+extends RigidBody2D
 
-const SPEED = 112
+var SPEED = 112
 onready var player = get_tree().get_nodes_in_group("pc")[0]
 
 var playerPoint
 var playerAngle
 
+var nav = null setget set_nav
+var path = []
+
 var motion = Vector2()
+
+func set_nav(new_nav):
+	nav = new_nav
+	update_path()
+	
+func update_path():
+	path = nav.get_simple_path(position, player.position, true)
+	if path.size() == 0:
+		print("ERROR!")
 
 func _ready():
 	set_process(true)
@@ -16,33 +28,56 @@ func _process(delta):
 	playerAngle = rad2deg(global_position.angle_to_point(playerPoint))
 	if playerAngle < -157.5 or playerAngle > 157.5:
 		$Sprite.play("right")
-		motion.x = SPEED
 	elif playerAngle > 112.5 and playerAngle <= 157.5:
 		$Sprite.play("upRight")
-		motion.x = SPEED
-		motion.y = -SPEED
 	elif playerAngle > 67.5 and playerAngle <= 112.5:
 		$Sprite.play("up")
-		motion.y = -SPEED
 	elif playerAngle > 22.5 and playerAngle <= 67.5:
 		$Sprite.play("upLeft")
-		motion.x = -SPEED
-		motion.y = -SPEED
 	elif playerAngle > -22.5 and playerAngle <= 22.5:
 		$Sprite.play("left")
-		motion.x = -SPEED
 	elif playerAngle < -22.5 and playerAngle >= -67.5:
 		$Sprite.play("downLeft")
-		motion.x = -SPEED
-		motion.y = SPEED
 	elif playerAngle < -67.5 and playerAngle >= -112.5:
 		$Sprite.play("down")
-		motion.y = SPEED
 	else:
 		$Sprite.play("downRight")
-		motion.x = SPEED
-		motion.y = SPEED
 		
-	if global_position.distance_to(playerPoint) < 64:
-		motion = Vector2(0,0)
-	move_and_slide(motion)
+	var walk_distance = SPEED * delta
+	move_along_path(walk_distance)
+	
+func move_along_path(distance):
+	if position.distance_to(player.position) > 32:
+		var last_point = position
+		for index in range(path.size()):
+			var distance_between_points = last_point.distance_to(path[0])
+			if distance <= distance_between_points and distance >= 0.0:
+				position = last_point.linear_interpolate(path[0], distance / distance_between_points)
+				break
+			elif distance < 0.0:
+				position = path[0]
+				break
+			distance -= distance_between_points
+			last_point = path[0]
+			path.remove(0)
+	else:
+		if position.distance_to(player.position) > 64:
+			snap()
+			
+func snap():
+	var rx = int(position.x) % 16
+	var ry = int(position.y) % 16
+	if rx != 0:
+		if rx > 8:
+			position.x += 16-rx
+		else:
+			position.x -= rx
+	if ry != 0:
+		if ry > 8:
+			position.y += 16-ry
+		else:
+			position.y -= ry
+
+func _on_Timer_timeout():
+	update_path()
+	$Timer.start()
