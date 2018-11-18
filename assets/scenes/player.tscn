@@ -1,21 +1,21 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://assets/char/temp_box_left.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/temp_box_up.png" type="Texture" id=2]
 [ext_resource path="res://assets/char/temp_box_right.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/temp_box_up.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/temp_box_left.png" type="Texture" id=4]
 [ext_resource path="res://assets/char/temp_box_down.png" type="Texture" id=5]
 [ext_resource path="res://assets/char/temp_box_downLeft.png" type="Texture" id=6]
 [ext_resource path="res://assets/char/temp_box_upRight.png" type="Texture" id=7]
-[ext_resource path="res://assets/char/temp_box_downRight.png" type="Texture" id=8]
-[ext_resource path="res://assets/char/temp_box_upLeft.png" type="Texture" id=9]
+[ext_resource path="res://assets/char/temp_box_upLeft.png" type="Texture" id=8]
+[ext_resource path="res://assets/char/temp_box_downRight.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -25,7 +25,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "up",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -45,12 +45,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "downRight",
+"name": "upLeft",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "upLeft",
+"name": "downRight",
 "speed": 5.0
 } ]
 
@@ -59,7 +59,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="player" type="KinematicBody2D" index="0" groups=[
+[node name="player" type="KinematicBody2D" groups=[
 "pc",
 ]]
 
@@ -71,8 +71,10 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
+z_index = 1
 frames = SubResource( 1 )
 animation = "down"
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
