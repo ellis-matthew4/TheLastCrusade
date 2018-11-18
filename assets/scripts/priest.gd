@@ -52,7 +52,12 @@ func move_along_path(distance):
 		for index in range(path.size()):
 			var distance_between_points = last_point.distance_to(path[0])
 			if distance <= distance_between_points and distance >= 0.0:
-				position = last_point.linear_interpolate(path[0], distance / distance_between_points)
+				motion = last_point.linear_interpolate(path[0], distance / distance_between_points)
+				if test_motion(motion):
+					position = motion
+				else:
+					motion *= Vector2(-1,-1)
+					position = motion
 				break
 			elif distance < 0.0:
 				position = path[0]

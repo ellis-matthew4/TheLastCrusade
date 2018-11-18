@@ -8,32 +8,32 @@ vertices = PoolVector2Array( 6, -10, -10, -10, 6, 6, -10, 6 )
 polygons = [ PoolIntArray( 0, 1, 0, 2, 3, 1 ) ]
 outlines = [ PoolVector2Array( 6, -10, -10, -10, 6, -10, 6, 6, -10, 6, -10, -10 ) ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 12 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4, 6 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 7 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7, 8 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Region", "Transform" ]
 
@@ -46,7 +46,6 @@ region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="bigFloor0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -60,7 +59,6 @@ region_rect = Rect2( 16, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="bigFloor1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -73,7 +71,6 @@ region_rect = Rect2( 32, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="bigFloor2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -86,7 +83,6 @@ region_rect = Rect2( 48, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="bigFloor3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -99,7 +95,6 @@ region_rect = Rect2( 64, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance5" type="NavigationPolygonInstance" parent="bigFloor4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -112,7 +107,6 @@ region_rect = Rect2( 0, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance6" type="NavigationPolygonInstance" parent="bigFloor5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -125,7 +119,6 @@ region_rect = Rect2( 16, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance7" type="NavigationPolygonInstance" parent="bigFloor6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -138,7 +131,6 @@ region_rect = Rect2( 48, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance8" type="NavigationPolygonInstance" parent="bigFloor7" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -151,7 +143,6 @@ region_rect = Rect2( 64, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance9" type="NavigationPolygonInstance" parent="bigFloor8" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -164,7 +155,6 @@ region_rect = Rect2( 0, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance10" type="NavigationPolygonInstance" parent="bigFloor9" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -177,7 +167,6 @@ region_rect = Rect2( 64, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance11" type="NavigationPolygonInstance" parent="bigFloor10" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -190,7 +179,6 @@ region_rect = Rect2( 64, 48, 16, 16 )
 
 [node name="NavigationPolygonInstance12" type="NavigationPolygonInstance" parent="bigFloor11" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -203,7 +191,6 @@ region_rect = Rect2( 0, 48, 16, 16 )
 
 [node name="NavigationPolygonInstance13" type="NavigationPolygonInstance" parent="bigFloor12" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -216,7 +203,6 @@ region_rect = Rect2( 0, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance14" type="NavigationPolygonInstance" parent="bigFloor13" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -229,7 +215,6 @@ region_rect = Rect2( 16, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance15" type="NavigationPolygonInstance" parent="bigFloor14" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -242,7 +227,6 @@ region_rect = Rect2( 32, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance16" type="NavigationPolygonInstance" parent="bigFloor15" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -255,7 +239,6 @@ region_rect = Rect2( 48, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance17" type="NavigationPolygonInstance" parent="bigFloor16" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -268,7 +251,6 @@ region_rect = Rect2( 64, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance18" type="NavigationPolygonInstance" parent="bigFloor17" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -316,7 +298,6 @@ region_rect = Rect2( 96, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance19" type="NavigationPolygonInstance" parent="walkway0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -329,7 +310,6 @@ region_rect = Rect2( 112, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance20" type="NavigationPolygonInstance" parent="walkway1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -342,7 +322,6 @@ region_rect = Rect2( 128, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance21" type="NavigationPolygonInstance" parent="walkway2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -355,7 +334,6 @@ region_rect = Rect2( 128, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance22" type="NavigationPolygonInstance" parent="walkway3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -368,7 +346,6 @@ region_rect = Rect2( 128, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance23" type="NavigationPolygonInstance" parent="walkway4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -381,7 +358,6 @@ region_rect = Rect2( 112, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance24" type="NavigationPolygonInstance" parent="walkway5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -394,7 +370,6 @@ region_rect = Rect2( 96, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance25" type="NavigationPolygonInstance" parent="walkway6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -407,7 +382,6 @@ region_rect = Rect2( 96, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance26" type="NavigationPolygonInstance" parent="walkway7" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -448,7 +422,6 @@ region_rect = Rect2( 160, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance27" type="NavigationPolygonInstance" parent="floor0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -461,7 +434,6 @@ region_rect = Rect2( 160, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance28" type="NavigationPolygonInstance" parent="floor1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -474,7 +446,6 @@ region_rect = Rect2( 160, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance29" type="NavigationPolygonInstance" parent="floor2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -487,7 +458,6 @@ region_rect = Rect2( 176, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance30" type="NavigationPolygonInstance" parent="floor3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -500,7 +470,6 @@ region_rect = Rect2( 192, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance31" type="NavigationPolygonInstance" parent="floor4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -513,7 +482,6 @@ region_rect = Rect2( 176, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance32" type="NavigationPolygonInstance" parent="floor5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -526,7 +494,6 @@ region_rect = Rect2( 192, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance33" type="NavigationPolygonInstance" parent="floor6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -539,7 +506,6 @@ region_rect = Rect2( 176, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance34" type="NavigationPolygonInstance" parent="stairs0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -552,7 +518,6 @@ region_rect = Rect2( 192, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance35" type="NavigationPolygonInstance" parent="stairs1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -565,7 +530,6 @@ region_rect = Rect2( 208, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance36" type="NavigationPolygonInstance" parent="stairs2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -578,7 +542,6 @@ region_rect = Rect2( 208, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance37" type="NavigationPolygonInstance" parent="stairs3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -591,7 +554,6 @@ region_rect = Rect2( 240, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance38" type="NavigationPolygonInstance" parent="pool0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -604,7 +566,6 @@ region_rect = Rect2( 240, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance39" type="NavigationPolygonInstance" parent="pool1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -617,7 +578,6 @@ region_rect = Rect2( 240, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance40" type="NavigationPolygonInstance" parent="pool2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -630,7 +590,6 @@ region_rect = Rect2( 256, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance41" type="NavigationPolygonInstance" parent="pool3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -643,7 +602,6 @@ region_rect = Rect2( 256, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance42" type="NavigationPolygonInstance" parent="pool4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -656,7 +614,6 @@ region_rect = Rect2( 256, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance43" type="NavigationPolygonInstance" parent="pool5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -669,7 +626,6 @@ region_rect = Rect2( 272, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance44" type="NavigationPolygonInstance" parent="pool6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -682,7 +638,6 @@ region_rect = Rect2( 272, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance45" type="NavigationPolygonInstance" parent="pool7" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -695,7 +650,6 @@ region_rect = Rect2( 272, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance46" type="NavigationPolygonInstance" parent="pool8" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -708,7 +662,6 @@ region_rect = Rect2( 304, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance47" type="NavigationPolygonInstance" parent="pool9" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -721,7 +674,6 @@ region_rect = Rect2( 320, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance48" type="NavigationPolygonInstance" parent="pool10" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -734,7 +686,6 @@ region_rect = Rect2( 336, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance49" type="NavigationPolygonInstance" parent="pool11" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -747,7 +698,6 @@ region_rect = Rect2( 336, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance50" type="NavigationPolygonInstance" parent="pool12" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -760,7 +710,6 @@ region_rect = Rect2( 320, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance51" type="NavigationPolygonInstance" parent="pool13" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -773,7 +722,6 @@ region_rect = Rect2( 304, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance52" type="NavigationPolygonInstance" parent="pool14" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -786,7 +734,6 @@ region_rect = Rect2( 304, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance53" type="NavigationPolygonInstance" parent="pool15" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -799,7 +746,6 @@ region_rect = Rect2( 320, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance54" type="NavigationPolygonInstance" parent="pool16" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -812,7 +758,6 @@ region_rect = Rect2( 336, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance55" type="NavigationPolygonInstance" parent="pool17" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -825,7 +770,6 @@ region_rect = Rect2( 0, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance56" type="NavigationPolygonInstance" parent="platform0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -838,7 +782,6 @@ region_rect = Rect2( 16, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance57" type="NavigationPolygonInstance" parent="platform1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -851,7 +794,6 @@ region_rect = Rect2( 48, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance58" type="NavigationPolygonInstance" parent="platform2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -864,7 +806,6 @@ region_rect = Rect2( 80, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance59" type="NavigationPolygonInstance" parent="platform3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -877,7 +818,6 @@ region_rect = Rect2( 80, 112, 16, 16 )
 
 [node name="NavigationPolygonInstance60" type="NavigationPolygonInstance" parent="platform4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 
@@ -891,7 +831,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="NavigationPolygonInstance61" type="NavigationPolygonInstance" parent="canal0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -906,7 +845,6 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="NavigationPolygonInstance62" type="NavigationPolygonInstance" parent="canal1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -920,7 +858,6 @@ region_rect = Rect2( 192, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance63" type="NavigationPolygonInstance" parent="canal2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -934,7 +871,6 @@ region_rect = Rect2( 160, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance64" type="NavigationPolygonInstance" parent="canal3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -948,7 +884,6 @@ region_rect = Rect2( 192, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance65" type="NavigationPolygonInstance" parent="canal4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -962,7 +897,6 @@ region_rect = Rect2( 160, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance66" type="NavigationPolygonInstance" parent="canal5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -976,7 +910,6 @@ region_rect = Rect2( 176, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance67" type="NavigationPolygonInstance" parent="canal6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -990,7 +923,6 @@ region_rect = Rect2( 192, 96, 16, 16 )
 
 [node name="NavigationPolygonInstance68" type="NavigationPolygonInstance" parent="canal7" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1004,7 +936,6 @@ region_rect = Rect2( 224, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance69" type="NavigationPolygonInstance" parent="canal8" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1018,7 +949,6 @@ region_rect = Rect2( 224, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance70" type="NavigationPolygonInstance" parent="canal9" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1032,7 +962,6 @@ region_rect = Rect2( 256, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance71" type="NavigationPolygonInstance" parent="canal10" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1046,7 +975,6 @@ region_rect = Rect2( 272, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance72" type="NavigationPolygonInstance" parent="canal11" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1060,7 +988,6 @@ region_rect = Rect2( 288, 112, 16, 16 )
 
 [node name="NavigationPolygonInstance73" type="NavigationPolygonInstance" parent="canal12" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1074,7 +1001,6 @@ region_rect = Rect2( 288, 128, 16, 16 )
 
 [node name="NavigationPolygonInstance74" type="NavigationPolygonInstance" parent="canal13" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1088,7 +1014,6 @@ region_rect = Rect2( 256, 144, 16, 16 )
 
 [node name="NavigationPolygonInstance75" type="NavigationPolygonInstance" parent="canal14" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1102,7 +1027,6 @@ region_rect = Rect2( 304, 64, 16, 16 )
 
 [node name="NavigationPolygonInstance76" type="NavigationPolygonInstance" parent="path0" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1116,7 +1040,6 @@ region_rect = Rect2( 304, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance77" type="NavigationPolygonInstance" parent="path1" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1130,7 +1053,6 @@ region_rect = Rect2( 336, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance78" type="NavigationPolygonInstance" parent="path2" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1144,7 +1066,6 @@ region_rect = Rect2( 352, 80, 16, 16 )
 
 [node name="NavigationPolygonInstance79" type="NavigationPolygonInstance" parent="path3" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1158,7 +1079,6 @@ region_rect = Rect2( 320, 112, 16, 16 )
 
 [node name="NavigationPolygonInstance80" type="NavigationPolygonInstance" parent="path4" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1172,7 +1092,6 @@ region_rect = Rect2( 336, 112, 16, 16 )
 
 [node name="NavigationPolygonInstance81" type="NavigationPolygonInstance" parent="path5" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1186,7 +1105,6 @@ region_rect = Rect2( 352, 112, 16, 16 )
 
 [node name="NavigationPolygonInstance82" type="NavigationPolygonInstance" parent="path6" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1200,7 +1118,6 @@ region_rect = Rect2( 320, 128, 16, 16 )
 
 [node name="NavigationPolygonInstance83" type="NavigationPolygonInstance" parent="path7" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1214,7 +1131,6 @@ region_rect = Rect2( 336, 128, 16, 16 )
 
 [node name="NavigationPolygonInstance84" type="NavigationPolygonInstance" parent="path8" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1228,7 +1144,6 @@ region_rect = Rect2( 352, 128, 16, 16 )
 
 [node name="NavigationPolygonInstance85" type="NavigationPolygonInstance" parent="path9" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1242,7 +1157,6 @@ region_rect = Rect2( 320, 144, 16, 16 )
 
 [node name="NavigationPolygonInstance86" type="NavigationPolygonInstance" parent="path10" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1256,7 +1170,6 @@ region_rect = Rect2( 336, 144, 16, 16 )
 
 [node name="NavigationPolygonInstance87" type="NavigationPolygonInstance" parent="path11" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1270,7 +1183,6 @@ region_rect = Rect2( 352, 144, 16, 16 )
 
 [node name="NavigationPolygonInstance88" type="NavigationPolygonInstance" parent="path12" index="0"]
 
-position = Vector2( 2, 2 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -1303,7 +1215,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration1/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="decoration2" type="Sprite" parent="." index="99"]
@@ -1327,7 +1239,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration2/StaticBody2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="decoration3" type="Sprite" parent="." index="100"]
 
@@ -1370,7 +1282,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration4/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="decoration5" type="Sprite" parent="." index="102"]
 
@@ -1391,7 +1303,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration5/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="wall0" type="Sprite" parent="." index="103"]
 
@@ -1412,7 +1324,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall0/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall1" type="Sprite" parent="." index="104"]
 
@@ -1433,11 +1345,10 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall1/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall2" type="Sprite" parent="." index="105"]
 
-editor/display_folded = true
 position = Vector2( 260, 70 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -1455,7 +1366,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall3" type="Sprite" parent="." index="106"]
 
@@ -1477,7 +1388,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall4" type="Sprite" parent="." index="107"]
 
@@ -1499,7 +1410,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall4/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall5" type="Sprite" parent="." index="108"]
 
@@ -1521,7 +1432,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall5/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="wall6" type="Sprite" parent="." index="109"]
 
@@ -1542,6 +1453,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall6/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 
