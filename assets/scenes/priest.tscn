@@ -59,7 +59,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="priest" type="KinematicBody2D" index="0"]
+[node name="priest" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
