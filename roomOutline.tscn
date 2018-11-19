@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=1]
+
+[node name="outline" type="TileMap" index="0"]
+
+position = Vector2( -256, -256 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 59, 0, -65529, 70, 0, -65528, 70, 0, -65521, 70, 0, -65520, 70, 0, -65513, 70, 0, -65512, 70, 0, -65504, 59, 0, 524287, 70, 0, 458784, 70, 0, 589823, 70, 0, 524320, 70, 0, 1048575, 70, 0, 983072, 70, 0, 1114111, 70, 0, 1048608, 70, 0, 1572863, 70, 0, 1507360, 70, 0, 1638399, 70, 0, 1572896, 70, 0, 2162687, 70, 0, 2097159, 70, 0, 2097160, 70, 0, 2097167, 70, 0, 2097168, 70, 0, 2097175, 70, 0, 2097176, 70, 0, 2097184, 70, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+
