@@ -4,17 +4,19 @@
 [ext_resource path="res://roomOutline.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=3]
 
-[node name="startRoom" type="Node2D" index="0"]
+[node name="hallway2Opposite" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 BoxelPosition = null
-BoxelSize = null
-Top = null
+BoxelSize = 1
+Top = true
 Right = null
-Bottom = null
+Bottom = true
 Left = null
 
 [node name="outline" parent="." index="0" instance=ExtResource( 2 )]
+
+visible = false
 
 [node name="ground" type="TileMap" parent="." index="1"]
 
@@ -35,7 +37,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 7, 67, 0, 8, 67, 0, 65543, 26, 0, 65544, 26, 0, 131079, 26, 0, 131080, 26, 0, 196615, 26, 0, 196616, 26, 0, 262151, 26, 0, 262152, 26, 0, 327687, 26, 0, 327688, 26, 0, 393223, 26, 0, 393224, 26, 0, 458759, 26, 0, 458760, 26, 0, 524295, 26, 0, 524296, 26, 0, 589831, 26, 0, 589832, 26, 0, 655367, 26, 0, 655368, 26, 0, 720903, 26, 0, 720904, 26, 0, 786439, 26, 0, 786440, 26, 0, 851975, 26, 0, 851976, 26, 0, 917511, 26, 0, 917512, 26, 0, 983047, 68, 0, 983048, 68, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="dec" type="TileMap" parent="." index="2"]
@@ -59,5 +61,26 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -144, -256, -160, -256, -160, 0, -144, 0 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -112, -256, -96, -256, -96, 0, -112, 0, -112, -256 )
 
 

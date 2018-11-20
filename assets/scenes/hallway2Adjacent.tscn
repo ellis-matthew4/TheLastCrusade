@@ -4,17 +4,19 @@
 [ext_resource path="res://roomOutline.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=3]
 
-[node name="startRoom" type="Node2D" index="0"]
+[node name="hallway2Adjacent" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 BoxelPosition = null
-BoxelSize = null
-Top = null
-Right = null
-Bottom = null
+BoxelSize = 1
+Top = true
+Right = true
+Bottom = false
 Left = null
 
 [node name="outline" parent="." index="0" instance=ExtResource( 2 )]
+
+visible = false
 
 [node name="ground" type="TileMap" parent="." index="1"]
 
@@ -35,7 +37,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 7, 67, 0, 8, 67, 0, 65543, 26, 0, 65544, 26, 0, 131079, 26, 0, 131080, 26, 0, 196615, 26, 0, 196616, 26, 0, 262151, 26, 0, 262152, 26, 0, 327687, 26, 0, 327688, 26, 0, 393223, 26, 0, 393224, 26, 0, 458759, 26, 0, 458760, 29, 0, 458761, 28, 0, 458762, 28, 0, 458763, 28, 0, 458764, 28, 0, 458765, 28, 0, 458766, 28, 0, 458767, 65, 0, 524295, 29, 0, 524296, 28, 0, 524297, 28, 0, 524298, 28, 0, 524299, 28, 0, 524300, 28, 0, 524301, 28, 0, 524302, 28, 0, 524303, 65, 0, 589831, 18, 0, 589832, 18, 0, 589833, 18, 0, 589834, 18, 0, 589835, 18, 0, 589836, 18, 0, 589837, 18, 0, 589838, 18, 0, 589839, 18, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="dec" type="TileMap" parent="." index="2"]
@@ -59,5 +61,25 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -112, -256, -112, -144, 0, -144, 0, -160, -96, -160, -96, -256 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -144, -256, -160, -256, -160, -96, 0, -96, 0, -112, -144, -112 )
 
 

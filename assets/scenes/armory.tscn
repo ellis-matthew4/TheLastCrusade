@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scripts/room.gd" type="Script" id=1]
+[ext_resource path="res://roomOutline.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=3]
+
+[node name="armory" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+BoxelPosition = null
+BoxelSize = 1
+Top = null
+Right = true
+Bottom = null
+Left = null
+
+[node name="outline" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="ground" type="TileMap" parent="." index="1"]
+
+position = Vector2( -256, -256 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 131074, 0, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 4, 0, 196610, 5, 0, 196611, 6, 0, 196612, 6, 0, 196613, 69, 0, 196614, 75, 0, 196615, 75, 0, 196616, 70, 0, 196617, 70, 0, 196618, 70, 0, 196619, 70, 0, 196620, 70, 0, 196621, 70, 0, 262146, 5, 0, 262147, 6, 0, 262148, 69, 0, 262149, 76, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 7, 0, 262156, 6, 0, 262157, 8, 0, 327682, 5, 0, 327683, 6, 0, 327684, 81, 0, 327685, 6, 0, 327686, 6, 0, 327687, 6, 0, 327688, 6, 0, 327689, 6, 0, 327690, 6, 0, 327691, 6, 0, 327692, 6, 0, 327693, 8, 0, 393218, 9, 0, 393219, 6, 0, 393220, 81, 0, 393221, 6, 0, 393222, 6, 0, 393223, 6, 0, 393224, 6, 0, 393225, 6, 0, 393226, 6, 0, 393227, 6, 0, 393228, 6, 0, 393229, 8, 0, 458754, 5, 0, 458755, 6, 0, 458756, 81, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 8, 0, 458766, 64, 0, 458767, 65, 0, 524290, 5, 0, 524291, 6, 0, 524292, 81, 0, 524293, 6, 0, 524294, 7, 0, 524295, 6, 0, 524296, 6, 0, 524297, 6, 0, 524298, 6, 0, 524299, 6, 0, 524300, 6, 0, 524301, 8, 0, 524302, 64, 0, 524303, 65, 0, 589826, 5, 0, 589827, 6, 0, 589828, 81, 0, 589829, 103, 0, 589830, 103, 0, 589831, 103, 0, 589832, 103, 0, 589833, 103, 0, 589834, 45, 0, 589835, 44, 0, 589836, 103, 0, 589837, 103, 0, 589838, 31, 0, 589839, 31, 0, 655362, 5, 0, 655363, 6, 0, 655364, 81, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 7, 0, 655370, 6, 0, 655371, 6, 0, 655372, 6, 0, 655373, 8, 0, 720898, 5, 0, 720899, 6, 0, 720900, 81, 0, 720901, 6, 0, 720902, 6, 0, 720903, 6, 0, 720904, 6, 0, 720905, 6, 0, 720906, 6, 0, 720907, 6, 0, 720908, 6, 0, 720909, 8, 0, 786434, 5, 0, 786435, 6, 0, 786436, 81, 0, 786437, 6, 0, 786438, 6, 0, 786439, 6, 0, 786440, 6, 0, 786441, 6, 0, 786442, 6, 0, 786443, 6, 0, 786444, 6, 0, 786445, 8, 0, 851970, 13, 0, 851971, 14, 0, 851972, 81, 0, 851973, 14, 0, 851974, 14, 0, 851975, 14, 0, 851976, 14, 0, 851977, 14, 0, 851978, 14, 0, 851979, 14, 0, 851980, 14, 0, 851981, 17, 0, 917506, 21, 0, 917507, 21, 0, 917508, 82, 0, 917509, 21, 0, 917510, 21, 0, 917511, 21, 0, 917512, 21, 0, 917513, 21, 0, 917514, 21, 0, 917515, 21, 0, 917516, 21, 0, 917517, 21, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="dec" type="TileMap" parent="." index="2"]
+
+position = Vector2( -256, -256 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65538, 98, 0, 131076, 99, 0, 327692, 97, 0, 458757, 98, 0, 458758, 98, 0, 458759, 98, 0, 524296, 99, 0, 589832, 97, 0, 589837, 97, 0, 786440, 98, 0, 786441, 98, 0, 851981, 99, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -144, -32, -144, -32, -224, -224, -224, -224, -32, -32, -32, -32, -112, 0, -112, 0, -96, -16, -96, -16, -16, -240, -16, -240, -240, -16, -240, -16, -160, 0, -160 )
+
+

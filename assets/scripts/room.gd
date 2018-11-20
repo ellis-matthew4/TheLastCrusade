@@ -1,7 +1,7 @@
 extends TileMap
 
 export(Vector2) var BoxelPosition
-export(Vector2) var BoxelSize
+export(int) var BoxelSize
 export(bool) var Top
 export(bool) var Right
 export(bool) var Bottom
@@ -25,3 +25,7 @@ func rotate_counterClockwise():
 	Right = old[2]
 	Bottom = old[3]
 	Left = old[0]
+
+#move on to the next floor!
+func _advance(body):
+	pass # replace with function body
