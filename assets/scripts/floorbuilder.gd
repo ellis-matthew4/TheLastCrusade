@@ -2,7 +2,7 @@ extends Node
 
 var start
 
-var virtualRoom = load("res://assets/scripts/virtualRoom.gd")
+var boxel = load("res://assets/scripts/boxel.gd")
 
 var startRoom = load("res://assets/scenes/StartRoom.tscn")
 var hallway2Opposite = load("res://assets/scenes/Hallway2Opposite.tscn")
@@ -36,19 +36,19 @@ func setFloorSize():
 	for i in range(floorSize):
 		var v = []
 		for j in range(floorSize):
-			v.append(virtualRoom.instance())
+			v.append(boxel.instance())
 		virualFloor.append(v)
 
 func markVRoom(k):
-	for i to range(k.BoxelSize):
-		for j to range(k.BoxelSize):
-			virtualFloor[i, j].mark = true
+	for i in range(k.BoxelSize):
+		for j in range(k.BoxelSize):
+			virtualFloor[k.BoxelPosition.x + i][k.BoxelPosition.y + j] = k.boxels[i][j]
 
 func rotateRoom(k):
 	if k.BoxelSize == 1:
     for c in k.get_children():
         c.position += Vector2(128, 128)
-	k.rotate_clockwise()
+	k.rotate()
 
 func randRot():
 	var rot = randi() % 4 + 1
@@ -64,18 +64,12 @@ func addStartRoom():
 	s.BoxelPosition = randPos()
 	for i in range(randRot()):
 		rotateRoom(s)
-	if (s.BoxelPosition.y == 0 and s.Top) or (s.BoxelPosition.y == (floorSize - 1) and s.Bottom):
-		rotateRoom(s)
-		rotateRoom(s)
-	if (s.BoxelPosition.x == 0 and s.Left) or (s.BoxelPosition.x == (floorSize - 1) and s.Right):
-		rotateRoom(s)
-		rotateRoom(s)
-	start = s
 	
 	rooms.append(start)
 
-func genRooms():
+func connectionsOpen():
 	
+	return true
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
