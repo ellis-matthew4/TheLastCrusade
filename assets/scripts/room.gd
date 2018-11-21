@@ -1,17 +1,26 @@
 extends TileMap
 
+var Boxel = load("res://assets/scripts/boxel.gd")
+
 export(Vector2) var BoxelPosition
 export(int) var BoxelSize
-export(bool) var Top
-export(bool) var Right
-export(bool) var Bottom
-export(bool) var Left
+
+var boxels = []
+func initBoxels(size):
+	BoxelSize = size
+	for i in range(BoxelSize):
+		var b = []
+		for j in range(BoxelSize):
+			b.append(Boxel.instance())
+		boxels.append(b)
+
 
 func _ready():
 	pass
 
 func rotate_clockwise():
 	rotation_degrees += 90
+	
 	var old = [ Top, Right, Bottom, Left ]
 	Top = old[3]
 	Right = old[0]
