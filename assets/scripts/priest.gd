@@ -1,13 +1,19 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 var SPEED = 112
 onready var player = get_tree().get_nodes_in_group("pc")[0]
 
 var playerPoint
 var playerAngle
+var health = 10
+var knockback = false
+var knockbackDir = Vector2(0,0)
 
 var nav = null setget set_nav
-var path = []
+var move_p = false
+var to_move = Vector2()
+var path = PoolVector2Array()
+var initialposition = Vector2()
 
 var motion = Vector2()
 
@@ -16,7 +22,7 @@ func set_nav(new_nav):
 	update_path()
 	
 func update_path():
-	path = nav.get_simple_path(position, player.position, true)
+	path = nav.get_simple_path(global_position, player.global_position, true)
 	if path.size() == 0:
 		print("ERROR!")
 
@@ -41,30 +47,32 @@ func _process(delta):
 		$Sprite.flip_h = false
 	if playerAngle > 90 or playerAngle < -90:
 		$Sprite.flip_h = true
-		
-	var walk_distance = SPEED * delta
-	move_along_path(walk_distance)
 	
-func move_along_path(distance):
-	if position.distance_to(player.position) > 32:
-		$Sprite.playing = true
-		var last_point = position
-		for index in range(path.size()):
-			var distance_between_points = last_point.distance_to(path[0])
-			if distance <= distance_between_points and distance >= 0.0:
-				motion = last_point.linear_interpolate(path[0], distance / distance_between_points)
-				position = motion
-				break
-			elif distance < 0.0:
-				position = path[0]
-				break
-			distance -= distance_between_points
-			last_point = path[0]
-			path.remove(0)
+	if move_p:
+		path = nav.get_simple_path(position, to_move+Vector2(randi()%100, randi()%100))
+		initialposition = position
+		move_p = false
+
+	if knockback:
+		motion = knockbackDir * Vector2(SPEED, SPEED)
+		move_and_slide(motion)
 	else:
-		$Sprite.playing = false
-		if position.distance_to(player.position) > 64:
+		if position.distance_to(playerPoint) > 32:
+			if path.size() > 0:
+				move_towards(initialposition, path[0], delta)
+		else:
+			$Sprite.playing = false
+		if position.distance_to(playerPoint) <= 16:
 			snap()
+	
+func move_towards(pos, point, delta):
+	$Sprite.playing = true
+	var v = (point-pos).normalized()
+	v *= SPEED
+	move_and_slide(v)
+	if position.distance_squared_to(point) < 9:
+		path.remove(0)
+		initialposition = position
 			
 func snap():
 	var rx = int(position.x) % 16
@@ -83,3 +91,13 @@ func snap():
 func _on_Timer_timeout():
 	update_path()
 	$Timer.start()
+
+func damage(body):
+	health -= 1
+	var angle = global_position.angle_to_point(body.global_position)
+	knockbackDir = Vector2(cos(angle), sin(angle))
+	knockback = true
+	$knockback.start()
+
+func _on_knockback_timeout():
+	knockback = false

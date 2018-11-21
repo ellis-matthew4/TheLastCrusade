@@ -1,4 +1,4 @@
-extends TileMap
+extends Node2D
 
 var Boxel = load("res://assets/scripts/boxel.gd")
 
@@ -26,7 +26,7 @@ func rotate():
 	# rotates the entire array of boxels
 	for x in range(int(BoxelSize/2)):
 		for y in range(x, BoxelSize-x-1):
-			temp = boxels[x][y]
+			var temp = boxels[x][y]
 			boxels[x][y] = boxels[y][BoxelSize-1-x]
 			boxels[y][BoxelSize-1-x] = boxels[BoxelSize-1-x][BoxelSize-1-y]
 			boxels[BoxelSize-1-y][x] = temp

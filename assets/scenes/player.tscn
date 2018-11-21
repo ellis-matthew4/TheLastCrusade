@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/crusader_left1.png" type="Texture" id=2]
@@ -13,14 +13,14 @@
 [ext_resource path="res://assets/char/crusader_down2.png" type="Texture" id=11]
 [ext_resource path="res://assets/char/crusader_down3.png" type="Texture" id=12]
 [ext_resource path="res://assets/char/crusader_down4.png" type="Texture" id=13]
-[ext_resource path="res://assets/char/crusader_downLeft1.png" type="Texture" id=14]
-[ext_resource path="res://assets/char/crusader_downLeft2.png" type="Texture" id=15]
-[ext_resource path="res://assets/char/crusader_downLeft3.png" type="Texture" id=16]
-[ext_resource path="res://assets/char/crusader_downLeft4.png" type="Texture" id=17]
-[ext_resource path="res://assets/char/crusader_upLeft1.png" type="Texture" id=18]
-[ext_resource path="res://assets/char/crusader_upLeft2.png" type="Texture" id=19]
-[ext_resource path="res://assets/char/crusader_upLeft3.png" type="Texture" id=20]
-[ext_resource path="res://assets/char/crusader_upLeft4.png" type="Texture" id=21]
+[ext_resource path="res://assets/char/crusader_upLeft1.png" type="Texture" id=14]
+[ext_resource path="res://assets/char/crusader_upLeft2.png" type="Texture" id=15]
+[ext_resource path="res://assets/char/crusader_upLeft3.png" type="Texture" id=16]
+[ext_resource path="res://assets/char/crusader_upLeft4.png" type="Texture" id=17]
+[ext_resource path="res://assets/char/crusader_downLeft1.png" type="Texture" id=18]
+[ext_resource path="res://assets/char/crusader_downLeft2.png" type="Texture" id=19]
+[ext_resource path="res://assets/char/crusader_downLeft3.png" type="Texture" id=20]
+[ext_resource path="res://assets/char/crusader_downLeft4.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -42,21 +42,26 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "downLeft",
+"name": "upLeft",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "upLeft",
+"name": "downLeft",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+radius = 8.0
 
-[node name="player" type="KinematicBody2D" index="0" groups=[
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 25.0
+
+[node name="player" type="KinematicBody2D" groups=[
 "pc",
 ]]
 
@@ -102,5 +107,26 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin" ]
+
+[node name="AttackArea" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="knockback" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.4
+one_shot = false
+autostart = false
 
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/scripts/priest.gd" type="Script" id=1]
-[ext_resource path="res://assets/char/priest_up1.png" type="Texture" id=2]
-[ext_resource path="res://assets/char/priest_up2.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/priest_up3.png" type="Texture" id=4]
-[ext_resource path="res://assets/char/priest_up4.png" type="Texture" id=5]
-[ext_resource path="res://assets/char/priest_left1.png" type="Texture" id=6]
-[ext_resource path="res://assets/char/priest_left2.png" type="Texture" id=7]
-[ext_resource path="res://assets/char/priest_left3.png" type="Texture" id=8]
-[ext_resource path="res://assets/char/priest_left4.png" type="Texture" id=9]
+[ext_resource path="res://assets/char/priest_left1.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/priest_left2.png" type="Texture" id=3]
+[ext_resource path="res://assets/char/priest_left3.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/priest_left4.png" type="Texture" id=5]
+[ext_resource path="res://assets/char/priest_up1.png" type="Texture" id=6]
+[ext_resource path="res://assets/char/priest_up2.png" type="Texture" id=7]
+[ext_resource path="res://assets/char/priest_up3.png" type="Texture" id=8]
+[ext_resource path="res://assets/char/priest_up4.png" type="Texture" id=9]
 [ext_resource path="res://assets/char/priest_down1.png" type="Texture" id=10]
 [ext_resource path="res://assets/char/priest_down2.png" type="Texture" id=11]
 [ext_resource path="res://assets/char/priest_down3.png" type="Texture" id=12]
@@ -27,12 +27,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "up",
+"name": "left",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -56,28 +56,14 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="priest" type="RigidBody2D" index="0" groups=[
+[node name="priest" type="KinematicBody2D" index="0" groups=[
 "priest",
 ]]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 2
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
@@ -98,6 +84,15 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
+[node name="knockback" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.4
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="knockback" to="." method="_on_knockback_timeout"]
 
 

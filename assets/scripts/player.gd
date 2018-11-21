@@ -4,6 +4,11 @@ const SPEED = 128
 var motion = Vector2()
 var mousePoint
 var mouseAngle
+var health = 10
+var knockback = false
+var knockbackDir = Vector2(0,0)
+
+onready var cut = preload("res://assets/scenes/cut.tscn")
 
 func _ready():
 	set_process(true)
@@ -28,6 +33,19 @@ func _physics_process(delta):
 	if mouseAngle > 90 or mouseAngle < -90:
 		$Sprite.flip_h = true
 		
+	if Input.is_action_just_pressed("ui_attack"):
+		var bodyList = $AttackArea.get_overlapping_bodies()
+		var c = cut.instance()
+		add_child(c)
+		c.global_position = global_position
+		c.angle = mouseAngle
+		for b in bodyList:
+			if b.is_in_group("enemy"):
+				var a = rad2deg(global_position.angle_to_point(b.global_position))
+				if abs(a-mouseAngle) < 45:
+					b.damage(self)
+					pass
+		
 	if Input.is_action_pressed("ui_up"):
 		motion.y = -SPEED
 	elif Input.is_action_pressed("ui_down"):
@@ -45,5 +63,14 @@ func _physics_process(delta):
 		$Sprite.playing = true
 	else:
 		$Sprite.playing = false
-		
+	
+	if knockback:
+		motion += knockbackDir * Vector2(SPEED * delta, SPEED * delta)
 	move_and_slide(motion)
+	
+func damage(body):
+	health -= 1
+	var angle = global_position.angle_to_point(body.global_position)
+	knockbackDir = Vector2(cos(angle), sin(angle))
+	knockback = true
+	$knockback.start()
