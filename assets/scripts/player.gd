@@ -4,7 +4,6 @@ const SPEED = 128
 var motion = Vector2()
 var mousePoint
 var mouseAngle
-var health = 10
 var knockback = false
 var knockbackDir = Vector2(0,0)
 
@@ -15,6 +14,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	$CanvasLayer/playerHealth.value = globs.health[0]
+	$CanvasLayer/priestHealth.value = globs.health[1]
+	
 	mousePoint = get_global_mouse_position()
 	mouseAngle = rad2deg(global_position.angle_to_point(mousePoint))
 	if (mouseAngle < -157.5 or mouseAngle > 157.5) or (mouseAngle > -22.5 and mouseAngle <= 22.5):
@@ -69,7 +71,7 @@ func _physics_process(delta):
 	move_and_slide(motion)
 	
 func damage(body):
-	health -= 1
+	globs.health[0] -= 1
 	var angle = global_position.angle_to_point(body.global_position)
 	knockbackDir = Vector2(cos(angle), sin(angle))
 	knockback = true

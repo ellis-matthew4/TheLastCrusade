@@ -13,10 +13,12 @@ var path = PoolVector2Array()
 var initialposition = Vector2()
 var knockback = false
 
-var health = 3
+var health = 1
 
 var motion = Vector2()
 var knockbackDir = Vector2(0,0)
+
+var arrow = preload("res://assets/scenes/arrow.tscn")
 
 func set_nav(new_nav):
 	nav = new_nav
@@ -56,15 +58,11 @@ func _process(delta):
 		initialposition = position
 		move_p = false
 
-	if knockback:
-		motion = knockbackDir * Vector2(SPEED, SPEED)
-		move_and_slide(motion)
+	if position.distance_to(playerPoint) > 128:
+		if path.size() > 0:
+			move_towards(initialposition, path[0], delta)
 	else:
-		if position.distance_to(playerPoint) > 8:
-			if path.size() > 0:
-				move_towards(initialposition, path[0], delta)
-		else:
-			$Sprite.playing = false
+		$Sprite.playing = false
 
 func move_towards(pos, point, delta):
 	$Sprite.playing = true
@@ -90,21 +88,10 @@ func snap():
 			position.y -= ry
 
 func _on_Timer_timeout():
-	update_path()
 	$Timer.start()
-
-func _on_hitbox_body_entered(body):
-	if body.is_in_group("pc"):
-		body.damage(self)
-	elif body.is_in_group("priest"):
-		body.damage(self)
-
+	var a = arrow.instance()
+	add_child(a)
+	
 func damage(body):
 	health -= 1
-	var angle = global_position.angle_to_point(body.global_position)
-	knockbackDir = Vector2(cos(angle), sin(angle))
-	knockback = true
-	$knockback.start()
-
-func _on_knockback_timeout():
-	knockback = false
+	

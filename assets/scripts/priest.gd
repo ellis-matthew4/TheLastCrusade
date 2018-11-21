@@ -5,7 +5,6 @@ onready var player = get_tree().get_nodes_in_group("pc")[0]
 
 var playerPoint
 var playerAngle
-var health = 10
 var knockback = false
 var knockbackDir = Vector2(0,0)
 
@@ -24,7 +23,7 @@ func set_nav(new_nav):
 func update_path():
 	path = nav.get_simple_path(global_position, player.global_position, true)
 	if path.size() == 0:
-		print("ERROR!")
+		pass
 
 func _ready():
 	set_process(true)
@@ -93,7 +92,7 @@ func _on_Timer_timeout():
 	$Timer.start()
 
 func damage(body):
-	health -= 1
+	globs.health[1] -= 1
 	var angle = global_position.angle_to_point(body.global_position)
 	knockbackDir = Vector2(cos(angle), sin(angle))
 	knockback = true

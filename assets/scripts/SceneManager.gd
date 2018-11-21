@@ -5,7 +5,7 @@ var menu = preload("res://assets/scenes/startRoom.tscn")
 var scene
 var player = preload("res://assets/scenes/player.tscn")
 var priest = preload("res://assets/scenes/priest.tscn")
-var stabber = preload("res://assets/scenes/stabber.tscn")
+var stabber = preload("res://assets/scenes/shooter.tscn")
 
 var p
 var k
