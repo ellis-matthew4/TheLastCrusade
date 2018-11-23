@@ -65,6 +65,9 @@ func _physics_process(delta):
 		$Sprite.playing = true
 	else:
 		$Sprite.playing = false
+		
+	if Input.is_key_pressed(KEY_ESCAPE):
+		$PauseMenu.show()
 	
 	if knockback:
 		motion += knockbackDir * Vector2(SPEED * delta, SPEED * delta)
@@ -77,11 +80,11 @@ func damage(body):
 	knockback = true
 	$knockback.start()
 	
-func buff():
-	if globs.health[0] + 5 > 10:
+func buff(k):
+	if globs.health[0] + k > 10:
 		globs.health[0] = 10
 	else:
-		globs.health[0] += 5
+		globs.health[0] += k
 
 func _on_knockback_timeout():
 	knockback = false

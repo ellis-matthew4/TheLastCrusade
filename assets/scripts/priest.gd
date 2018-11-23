@@ -14,6 +14,8 @@ var to_move = Vector2()
 var path = PoolVector2Array()
 var initialposition = Vector2()
 
+var verseNum
+
 var motion = Vector2()
 
 var scriptures = [ "res://assets/sounds/sfx/job38--2-3.ogg",
@@ -107,17 +109,24 @@ func _on_knockback_timeout():
 	knockback = false
 	
 func enchant():
-	if globs.health[1] + 5 > 10:
+	var k
+	if verseNum < 3:
+		k = 3
+	else:
+		k = 5
+	if globs.health[1] + k > 10:
 		globs.health[1] = 10
 	else:
-		globs.health[1] += 5
+		globs.health[1] += k
 	$enchant.emitting = false
 	$enchant2.emitting = true
 	var bodyList = $radius.get_overlapping_bodies()
 	for b in bodyList:
 		if b.is_in_group("pc"):
-			b.buff()
+			b.buff(k)
 
 func _on_enchantTimer_timeout():
 	$enchant.emitting = true
-	globs.playPriest(scriptures[randi() % scriptures.size()])
+	randomize()
+	verseNum = randi() % scriptures.size()
+	globs.playPriest(scriptures[verseNum])

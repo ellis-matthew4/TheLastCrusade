@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/crusader_up1.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/char/crusader_down2.png" type="Texture" id=19]
 [ext_resource path="res://assets/char/crusader_down3.png" type="Texture" id=20]
 [ext_resource path="res://assets/char/crusader_down4.png" type="Texture" id=21]
+[ext_resource path="res://assets/scenes/PauseMenu.tscn" type="PackedScene" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -255,6 +256,8 @@ exp_edit = false
 rounded = false
 percent_visible = true
 _sections_unfolded = [ "Grow Direction", "custom_styles" ]
+
+[node name="PauseMenu" parent="." index="6" instance=ExtResource( 22 )]
 
 [connection signal="timeout" from="knockback" to="." method="_on_knockback_timeout"]
 
