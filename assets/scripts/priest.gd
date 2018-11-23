@@ -16,6 +16,11 @@ var initialposition = Vector2()
 
 var motion = Vector2()
 
+var scriptures = [ "res://assets/sounds/sfx/job38--2-3.ogg",
+				   "res://assets/sounds/sfx/job40--3-5.ogg",
+				   "res://assets/sounds/sfx/revelation11--17-18.ogg",
+				   "res://assets/sounds/sfx/revelation12--10-12.ogg" ]
+
 func set_nav(new_nav):
 	nav = new_nav
 	update_path()
@@ -63,6 +68,10 @@ func _process(delta):
 			$Sprite.playing = false
 		if position.distance_to(playerPoint) <= 16:
 			snap()
+	if Input.is_key_pressed(KEY_SHIFT):
+		set_collision_mask_bit(1, false)
+	else:
+		set_collision_mask_bit(1, true)
 	
 func move_towards(pos, point, delta):
 	$Sprite.playing = true
@@ -100,3 +109,19 @@ func damage(body):
 
 func _on_knockback_timeout():
 	knockback = false
+	
+func enchant():
+	if globs.health[1] + 5 > 10:
+		globs.health[1] = 10
+	else:
+		globs.health[1] += 5
+	$enchant.emitting = false
+	$enchant2.emitting = true
+	var bodyList = $radius.get_overlapping_bodies()
+	for b in bodyList:
+		if b.is_in_group("pc"):
+			b.buff()
+
+func _on_enchantTimer_timeout():
+	$enchant.emitting = true
+	globs.playPriest(scriptures[randi() % scriptures.size()])

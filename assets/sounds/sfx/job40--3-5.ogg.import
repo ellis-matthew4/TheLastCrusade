@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/job40--3-5.ogg-9e37b5e6234786bf3fecb2fccf18627f.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/job40--3-5.ogg"
+dest_files=[ "res://.import/job40--3-5.ogg-9e37b5e6234786bf3fecb2fccf18627f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

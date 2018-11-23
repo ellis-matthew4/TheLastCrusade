@@ -76,3 +76,12 @@ func damage(body):
 	knockbackDir = Vector2(cos(angle), sin(angle))
 	knockback = true
 	$knockback.start()
+	
+func buff():
+	if globs.health[0] + 5 > 10:
+		globs.health[0] = 10
+	else:
+		globs.health[0] += 5
+
+func _on_knockback_timeout():
+	knockback = false

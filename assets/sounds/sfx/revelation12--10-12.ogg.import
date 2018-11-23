@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/revelation12--10-12.ogg-ccc8ae3d14eb9b62a99e22e04a3eb6e4.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/revelation12--10-12.ogg"
+dest_files=[ "res://.import/revelation12--10-12.ogg-ccc8ae3d14eb9b62a99e22e04a3eb6e4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

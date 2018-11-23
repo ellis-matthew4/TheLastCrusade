@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/job38--2-3.ogg-aeaff35b7b4c23ea86685628eefd8553.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/job38--2-3.ogg"
+dest_files=[ "res://.import/job38--2-3.ogg-aeaff35b7b4c23ea86685628eefd8553.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
