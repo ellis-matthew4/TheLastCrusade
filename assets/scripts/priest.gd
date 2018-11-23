@@ -68,10 +68,6 @@ func _process(delta):
 			$Sprite.playing = false
 		if position.distance_to(playerPoint) <= 16:
 			snap()
-	if Input.is_key_pressed(KEY_SHIFT):
-		set_collision_mask_bit(1, false)
-	else:
-		set_collision_mask_bit(1, true)
 	
 func move_towards(pos, point, delta):
 	$Sprite.playing = true
