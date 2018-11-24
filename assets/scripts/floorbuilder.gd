@@ -64,6 +64,9 @@ func randPos():
 	var y = randi() % floorSize
 	return Vector2(x, y)
 
+func setTruePos(k):
+	k.position = Vector2((k.BoxelPosition.x * k.BoxelSize * k.TileSize) / 2, (k.BoxelPosition.y * k.BoxelSize * k.TileSize) / 2)
+
 # generates a floor
 func genFloor():
 	setFloorSize()
@@ -87,6 +90,7 @@ func genFloor():
 				possible = possiblePositionsLeft(queue[0], temp, temp.instance().BoxelSize)
 			if possible.size() > 0:
 				var r = possible[randi() % possible.size()]
+				setTruePos(r)
 				r.pathLength = queue[0].pathLength + 1
 				markVRoom(r)
 				addToQueue(r)

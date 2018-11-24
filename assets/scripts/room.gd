@@ -4,6 +4,7 @@ var Boxel = load("res://assets/scripts/boxel.gd")
 
 export(Vector2) var BoxelPosition
 export(int) var BoxelSize
+export(int) var TileSize
 
 var boxels = []
 
