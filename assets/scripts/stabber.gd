@@ -32,6 +32,7 @@ func _ready():
 	
 func _process(delta):
 	if health == 0:
+		globs.bumpScore()
 		queue_free()
 	playerPoint = player.global_position
 	playerAngle = rad2deg(global_position.angle_to_point(playerPoint))

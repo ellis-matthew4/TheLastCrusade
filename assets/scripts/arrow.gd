@@ -26,4 +26,5 @@ func _on_hitbox_body_entered(body):
 		queue_free()
 
 func damage(body):
+	globs.bumpScore(5)
 	queue_free()
