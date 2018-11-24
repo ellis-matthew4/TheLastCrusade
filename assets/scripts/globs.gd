@@ -2,6 +2,7 @@ extends Node
 
 var path = "res://assets/scenes/testRoom.tscn"
 var health = [ 10, 10 ]
+var score = 0
 
 var sfxStream
 var musicStream
@@ -32,3 +33,6 @@ func playPriest(sound):
 func enchantSignal():
 	for c in get_tree().get_nodes_in_group("priest"):
 		c.enchant()
+		
+func bumpScore(amount = 100):
+	score += amount

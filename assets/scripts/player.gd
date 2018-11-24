@@ -16,6 +16,7 @@ func _ready():
 func _physics_process(delta):
 	$CanvasLayer/playerHealth.value = globs.health[0]
 	$CanvasLayer/priestHealth.value = globs.health[1]
+	$CanvasLayer/Label.text = "Score: " + str(globs.score)
 	
 	mousePoint = get_global_mouse_position()
 	mouseAngle = rad2deg(global_position.angle_to_point(mousePoint))

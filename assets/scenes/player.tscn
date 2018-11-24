@@ -1,14 +1,14 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://assets/char/crusader_up1.png" type="Texture" id=2]
-[ext_resource path="res://assets/char/crusader_up2.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/crusader_up3.png" type="Texture" id=4]
-[ext_resource path="res://assets/char/crusader_up4.png" type="Texture" id=5]
-[ext_resource path="res://assets/char/crusader_left1.png" type="Texture" id=6]
-[ext_resource path="res://assets/char/crusader_left2.png" type="Texture" id=7]
-[ext_resource path="res://assets/char/crusader_left3.png" type="Texture" id=8]
-[ext_resource path="res://assets/char/crusader_left4.png" type="Texture" id=9]
+[ext_resource path="res://assets/char/crusader_left1.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/crusader_left2.png" type="Texture" id=3]
+[ext_resource path="res://assets/char/crusader_left3.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/crusader_left4.png" type="Texture" id=5]
+[ext_resource path="res://assets/char/crusader_up1.png" type="Texture" id=6]
+[ext_resource path="res://assets/char/crusader_up2.png" type="Texture" id=7]
+[ext_resource path="res://assets/char/crusader_up3.png" type="Texture" id=8]
+[ext_resource path="res://assets/char/crusader_up4.png" type="Texture" id=9]
 [ext_resource path="res://assets/char/crusader_downLeft1.png" type="Texture" id=10]
 [ext_resource path="res://assets/char/crusader_downLeft2.png" type="Texture" id=11]
 [ext_resource path="res://assets/char/crusader_downLeft3.png" type="Texture" id=12]
@@ -21,19 +21,20 @@
 [ext_resource path="res://assets/char/crusader_down2.png" type="Texture" id=19]
 [ext_resource path="res://assets/char/crusader_down3.png" type="Texture" id=20]
 [ext_resource path="res://assets/char/crusader_down4.png" type="Texture" id=21]
-[ext_resource path="res://assets/scenes/PauseMenu.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/font/AlbertText-Bold.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://assets/scenes/PauseMenu.tscn" type="PackedScene" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "up",
+"name": "left",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -125,7 +126,15 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[node name="player" type="KinematicBody2D" groups=[
+[sub_resource type="DynamicFont" id=7]
+
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 22 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="player" type="KinematicBody2D" index="0" groups=[
 "pc",
 ]]
 
@@ -257,7 +266,30 @@ rounded = false
 percent_visible = true
 _sections_unfolded = [ "Grow Direction", "custom_styles" ]
 
-[node name="PauseMenu" parent="." index="6" instance=ExtResource( 22 )]
+[node name="Label" type="Label" parent="CanvasLayer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1117.0
+margin_top = 14.0
+margin_right = 1183.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+text = "Score: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="PauseMenu" parent="." index="6" instance=ExtResource( 23 )]
 
 [connection signal="timeout" from="knockback" to="." method="_on_knockback_timeout"]
 
