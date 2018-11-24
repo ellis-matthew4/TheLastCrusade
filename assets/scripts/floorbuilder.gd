@@ -1,8 +1,8 @@
-extends Node
+extends Node2D
 
 var start
 
-var boxel = load("res://assets/scripts/boxel.gd")
+var boxel = load("res://assets/scenes/Boxel.tscn")
 
 var startRoom = load("res://assets/scenes/StartRoom.tscn")
 var hallway2Opposite = load("res://assets/scenes/Hallway2Opposite.tscn")
@@ -30,6 +30,8 @@ var MAX_SIZE = 32
 # in terms of Boxels
 var floorSize
 var virtualFloor = []
+
+signal Switch
 
 # sets a random floor size
 func setFloorSize():
@@ -76,7 +78,7 @@ func genFloor():
 			var pos = getPos(queue[0])
 			var temp
 			if queue[0].pathLength >= 8:
-				temp = stairsDown
+				temp = stairDown
 			else:
 				temp = types[randi() % types.size()]
 			var possible
@@ -90,6 +92,7 @@ func genFloor():
 				possible = possiblePositionsLeft(queue[0], temp, temp.instance().BoxelSize)
 			if possible.size() > 0:
 				var r = possible[randi() % possible.size()]
+				add_child(r)
 				setTruePos(r)
 				r.pathLength = queue[0].pathLength + 1
 				markVRoom(r)
@@ -268,11 +271,4 @@ func connectionsOpen(k):
 	return true
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	genFloor()
