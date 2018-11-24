@@ -34,7 +34,7 @@ func switch():
 	var x = load(globs.path)
 	remove_child(scene)
 	scene = x.instance()
-	p.position = x.START
+	p.position = x.START #Starting position, change later
 	k.position = x.START - Vector2(32,-32)
 	scene.connect("Switch", self, "switch")
 	add_child(scene)
