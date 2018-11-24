@@ -46,7 +46,9 @@ func setFloorSize():
 func markVRoom(k):
 	for i in range(k.BoxelSize):
 		for j in range(k.BoxelSize):
-			virtualFloor[k.BoxelPosition.x + i][k.BoxelPosition.y + j] = k.boxels[i][j]
+			var b = virtualFloor[k.BoxelPosition.x + i][k.BoxelPosition.y + j]
+			b = k
+			b.active = true
 
 # rotates a room
 func rotateRoom(k):
@@ -119,8 +121,8 @@ func addStartRoom():
 func addToQueue(k):
 	for y in range(k.BoxelSize):
 		for x in range(k.BoxelSize):
-			if k.boxels[y][x].Top or k.boxels[y][x].Bottom or k.boxels[y][x].Left or k.boxels[y][x].Right:
-				queue.append(k.boxels[y][x])
+			if k.Top or k.Bottom or k.Left or k.Right:
+				queue.append(k)
 
 # checks to see if room has any possible open connections
 func hasOpenConnections(k):
@@ -230,7 +232,7 @@ func connectionsOpen(k):
 			# check only the outer perimeter of the room
 			if (y == 0 or y == (k.BoxelSize - 1)) or (x == 0 or x == (k.BoxelSize - 1)):
 				# check the top of the room
-				if k.boxels[y][x].Top:
+				if k.Top:
 					# checck to see if opening goes nowhere
 					if k.BoxelPosition.y + y == 0:
 						return false
@@ -240,17 +242,18 @@ func connectionsOpen(k):
 							return false
 							
 				# check the bottom of the room
-				if k.boxels[y][x].Bottom:
+				if k.Bottom:
 					# checck to see if opening goes nowhere
 					if k.BoxelPosition.y + y == floorSize - 1:
 						return false
 					# check if something below
 					else:
+						print(virtualFloor[k.BoxelPosition.y + y + 1][k.BoxelPosition.x + x].toString())
 						if virtualFloor[k.BoxelPosition.y + y + 1][k.BoxelPosition.x + x].active and not virtualFloor[k.BoxelPosition.y + y + 1][k.BoxelPosition.x + x].Top:
 							return false
 							
 				# check the left of the room
-				if k.boxels[y][x].Left:
+				if k.Left:
 					# checck to see if opening goes nowhere
 					if k.BoxelPosition.x + x == 0:
 						return false
@@ -260,7 +263,7 @@ func connectionsOpen(k):
 							return false
 							
 				# check the right of the room
-				if k.boxels[y][x].Right:
+				if k.Right:
 					# checck to see if opening goes nowhere
 					if k.BoxelPosition.x + x == floorSize - 1:
 						return false

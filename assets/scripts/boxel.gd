@@ -5,7 +5,10 @@ export(bool) var Right
 export(bool) var Bottom
 export(bool) var Left
 export(int) var pathLength
-export(bool) var active
+var active = false
 
 func _ready():
 	pass
+
+func toString():
+	print("This is a boxel!")
