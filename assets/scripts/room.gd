@@ -11,8 +11,29 @@ export(bool) var Bottom
 export(bool) var Left
 var active = false
 
+var boxels = []
+
 func _ready():
-	pass
+	if BoxelSize == 1:
+		position += Vector2(128,128)
+		var b = Boxel.instance()
+		b.Top = Top; b.Right = Right; b.Bottom = Bottom; b.Left = Left
+		boxels.append(b)
+	elif BoxelSize == 2:
+		boxels.append([Boxel.instance(), Boxel.instance()])
+		boxels.append([Boxel.instance(), Boxel.instance()])
+		if Top:
+			boxels[1][0].Top = true
+			boxels[0][0].Top = true
+		if Left:
+			boxels[0][1].Left = true
+			boxels[0][0].Left = true
+		if Right:
+			boxels[1][1].Right = true
+			boxels[1][0].Right = true
+		if Bottom:
+			boxels[0][1].Bottom = true
+			boxels[1][1].Bottom = true
 
 func rotate():
 	rotation_degrees -= 90
