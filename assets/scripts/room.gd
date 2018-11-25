@@ -11,6 +11,7 @@ export(bool) var Left = false
 export var type = ""
 var active = false
 var TileSize = 16
+var PixelSize = 16
 
 var boxels = []
 
@@ -34,7 +35,7 @@ func toString():
 	
 func assignBoxels():
 	if BoxelSize == 1:
-		position += Vector2(128,128)
+#		position += Vector2(128,128)
 		boxels.append([Boxel.instance()])
 		boxels[0][0].Top = Top
 		boxels[0][0].Left = Left
@@ -55,6 +56,12 @@ func assignBoxels():
 		if Bottom:
 			boxels[0][1].Bottom = true
 			boxels[1][1].Bottom = true
+			
+func setTruePos():
+	print("Setting true position of room " + type)
+	print(BoxelPosition)
+	position = Vector2((BoxelPosition.x * BoxelSize * TileSize * PixelSize) / 2, (BoxelPosition.y * BoxelSize * TileSize * PixelSize) / 2)
+	print(position)
 
 #move on to the next floor!
 func _advance(body):

@@ -69,12 +69,6 @@ func randPos():
 	var y = randi() % floorSize
 	return Vector2(x, y)
 
-func setTruePos(k):
-	print("Setting true position of room " + k.type)
-	print(k.BoxelPosition)
-	k.global_position = Vector2((k.BoxelPosition.x * k.BoxelSize * k.TileSize), (k.BoxelPosition.y * k.BoxelSize * k.TileSize))
-	print(k.global_position)
-
 # generates a floor
 func genFloor():
 	print("Generating floor...")
@@ -82,33 +76,42 @@ func genFloor():
 	addStartRoom()
 	while(queue.size() > 0):
 		if hasOpenConnections(queue[0]):
+			randomize()
 			var pos = getPos(queue[0])
 			var temp
-			if queue[0].pathLength >= 8:
+			if queue[0].pathLength >= 4:
 				temp = stairDown
 			else:
 				temp = types[randi() % types.size()]
 			var possible
+#			print(str(temp))
+			var tempInstance = temp.instance()
+			add_child(tempInstance)
 			if queue[0].Top:
-				possible = possiblePositionsTop(queue[0], temp, temp.instance().BoxelSize)
-				queue[0].Top = false
+				possible = possiblePositionsTop(queue[0], temp, tempInstance.BoxelSize)
+				if possible.size() > 0:
+					queue[0].Top = false
 			elif queue[0].Bottom:
-				possible = possiblePositionsBottom(queue[0], temp, temp.instance().BoxelSize)
-				queue[0].Bottom = false
+				possible = possiblePositionsBottom(queue[0], temp, tempInstance.BoxelSize)
+				if possible.size() > 0:
+					queue[0].Bottom = false
 			elif queue[0].Right:
-				possible = possiblePositionsRight(queue[0], temp, temp.instance().BoxelSize)
-				queue[0].Right = false
+				possible = possiblePositionsRight(queue[0], temp, tempInstance.BoxelSize)
+				if possible.size() > 0:
+					queue[0].Right = false
 			elif queue[0].Left:
-				possible = possiblePositionsLeft(queue[0], temp, temp.instance().BoxelSize)
-				queue[0].Left = false
+				possible = possiblePositionsLeft(queue[0], temp, tempInstance.BoxelSize)
+				if possible.size() > 0:
+					queue[0].Left = false
+			remove_child(tempInstance)
 			if possible.size() > 0:
 				var r = possible[randi() % possible.size()]
 				add_child(r)
-				setTruePos(r)
+				r.setTruePos()
 				markVRoom(r)
 				addToQueue(r)
 				increasePathLength()
-				rooms.append(r) 
+				rooms.append(r)
 		else:
 			print("Popping")
 			queue.pop_front()
@@ -131,7 +134,7 @@ func addStartRoom():
 	start = s
 	var p = player.instance()
 	add_child(p)
-	setTruePos(s)
+	s.setTruePos()
 	p.global_position = s.global_position + Vector2(128,128)
 	markVRoom(start)
 	addToQueue(start)
@@ -152,7 +155,7 @@ func hasOpenConnections(k):
 	var pos = getPos(k)
 	if k.Top and not virtualFloor[pos.y - 1][pos.x].active:
 		return true
-	if k.Bottom and not virtualFloor[pos.y + 1][pos.x].active:
+	if k.Bottom and not pos.y >= floorSize and not virtualFloor[pos.y + 1][pos.x].active:
 		return true
 	if k.Left and not virtualFloor[pos.y][pos.x - 1].active:
 		return true
@@ -165,7 +168,9 @@ func getPos(k):
 	for y in range(floorSize):
 		for x in range(floorSize):
 			if virtualFloor[y][x] == k:
+#				print("Successfully found coords!")
 				return Vector2(x, y)
+	print("Failed to find coords.")
 
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsTop(k, l, BoxelSize):
