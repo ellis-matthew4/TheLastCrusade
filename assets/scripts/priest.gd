@@ -8,7 +8,7 @@ var playerAngle
 var knockback = false
 var knockbackDir = Vector2(0,0)
 
-var nav = null setget set_nav
+var nav setget set_nav
 var move_p = false
 var to_move = Vector2()
 var path = PoolVector2Array()

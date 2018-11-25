@@ -30,6 +30,7 @@ func update_path():
 		pass
 
 func _ready():
+	nav = get_tree().current_scene
 	set_process(true)
 	
 func _process(delta):
