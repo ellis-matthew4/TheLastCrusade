@@ -97,6 +97,7 @@ func snap():
 			position.y -= ry
 
 func _on_Timer_timeout():
+	$AudioStreamPlayer2D.play()
 	$Timer.start()
 	if aggro:
 		var a = arrow.instance()
