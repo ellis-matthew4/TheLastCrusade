@@ -99,6 +99,6 @@ audio_bus_name = "Master"
 
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="next" to="." method="_advance"]
+[connection signal="body_entered" from="next" to="." method="advance"]
 
 

@@ -109,6 +109,7 @@ func _on_knockback_timeout():
 	knockback = false
 	
 func enchant():
+	$enchantTimer.start()
 	globs.playSound("res://assets/sounds/sfx/Magic.ogg")
 	var k
 	if verseNum < 3:

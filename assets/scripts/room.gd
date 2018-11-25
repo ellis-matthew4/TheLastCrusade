@@ -64,6 +64,6 @@ func setTruePos():
 	print(position)
 
 #move on to the next floor!
-func _advance(body):
+func advance(body):
 	get_parent().switch()
 	

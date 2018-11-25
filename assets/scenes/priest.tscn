@@ -169,7 +169,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Scale" ]
 
-[node name="priest" type="KinematicBody2D" groups=[
+[node name="priest" type="KinematicBody2D" index="0" groups=[
 "priest",
 ]]
 
@@ -269,7 +269,7 @@ _sections_unfolded = [ "Process Material", "Time" ]
 
 process_mode = 1
 wait_time = 60.0
-one_shot = true
+one_shot = false
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
