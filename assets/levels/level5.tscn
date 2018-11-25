@@ -1,0 +1,184 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/scripts/level.gd" type="Script" id=1]
+[ext_resource path="res://assets/scenes/startRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/hallway2Adjacent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/hallway4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/hallway2Opposite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scenes/storeRoom.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/scenes/messHall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/stairs.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/scenes/hallway3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/scenes/armory.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/scenes/barracks.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/scenes/shooter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/scenes/stabber.tscn" type="PackedScene" id=13]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 48, -224, 240, -224, 240, -32, 160, -32, 384, -288, 192, -288, 192, -528, 528, -528, 528, -560, 336, -560, 336, -608, 384, -752, 416, -752, 272, -608, 272, -752, 384, -800, 304, -800, 304, -992, 496, -992, 496, -800, 416, -800, 640, -752, 560, -608, 640, -608, 560, -528, 592, -528, 592, -288, 416, -288, 384, 112, 416, 112, 640, -32, 560, -32, 560, -112, 576, -112, 832, -112, 832, -16, 736, 272, 928, -16, 928, 288, 736, 368, 1008, 288, 1008, 368, 640, 272, 640, 144, 1072, 624, 1072, 416, 1520, 416, 1520, 864, 1072, 864, 1072, 656, 672, 624, 240, 656, 240, 736, 48, 736, 48, 544, 240, 544, 240, 624, 640, 624, 672, 368, 640, 400, 416, 368, 384, 400, 384, 144, 416, 144, 128, -32, 48, -32, 160, 112, 128, 144, 640, 112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11, 12 ), PoolIntArray( 10, 13, 14, 11 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 18, 19, 20 ), PoolIntArray( 15, 18, 20, 11 ), PoolIntArray( 11, 20, 12 ), PoolIntArray( 8, 12, 21, 22 ), PoolIntArray( 21, 23, 22 ), PoolIntArray( 8, 22, 24, 7 ), PoolIntArray( 24, 25, 26, 27 ), PoolIntArray( 7, 24, 27, 4 ), PoolIntArray( 28, 4, 27, 29 ), PoolIntArray( 30, 31, 32, 33 ), PoolIntArray( 33, 34, 35, 30 ), PoolIntArray( 36, 35, 37, 38, 39 ), PoolIntArray( 38, 40, 41, 39 ), PoolIntArray( 36, 42, 43, 35 ), PoolIntArray( 44, 45, 46, 47 ), PoolIntArray( 47, 48, 49 ), PoolIntArray( 44, 47, 49 ), PoolIntArray( 50, 44, 49, 51 ), PoolIntArray( 51, 52, 53, 54 ), PoolIntArray( 54, 55, 56 ), PoolIntArray( 51, 54, 56 ), PoolIntArray( 51, 56, 57 ), PoolIntArray( 50, 51, 57 ), PoolIntArray( 58, 50, 57, 59 ), PoolIntArray( 60, 58, 59, 61 ), PoolIntArray( 60, 61, 62, 63 ), PoolIntArray( 64, 65, 0 ), PoolIntArray( 64, 0, 3 ), PoolIntArray( 64, 3, 66, 67 ), PoolIntArray( 62, 67, 66, 28 ), PoolIntArray( 62, 28, 29, 63 ), PoolIntArray( 63, 29, 68, 43 ), PoolIntArray( 35, 43, 68 ), PoolIntArray( 35, 68, 30 ), PoolIntArray( 33, 30, 33 ) ]
+outlines = [ PoolVector2Array( 48, -224, 48, -32, 128, -32, 128, 144, 384, 144, 384, 400, 640, 400, 640, 624, 240, 624, 240, 544, 48, 544, 48, 736, 240, 736, 240, 656, 1072, 656, 1072, 864, 1520, 864, 1520, 416, 1072, 416, 1072, 624, 672, 624, 672, 368, 416, 368, 416, 144, 640, 144, 640, 272, 736, 272, 736, 368, 1008, 368, 1008, 288, 928, 288, 928, -16, 832, -16, 832, -112, 576, -112, 576, -112, 560, -112, 560, -32, 640, -32, 640, 112, 416, 112, 416, -288, 592, -288, 592, -528, 560, -528, 560, -608, 640, -608, 640, -752, 416, -752, 416, -800, 496, -800, 496, -992, 304, -992, 304, -800, 384, -800, 384, -752, 272, -752, 272, -608, 336, -608, 336, -560, 528, -560, 528, -528, 192, -528, 192, -288, 384, -288, 384, 112, 160, 112, 160, -32, 240, -32, 240, -224 ) ]
+
+[node name="level5" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+START = null
+
+[node name="startRoom" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 16, -256 )
+rotation = 3.14159
+
+[node name="hallway2Adjacent" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 272, 256 )
+
+[node name="hallway4" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 528, 256 )
+
+[node name="hallway2Opposite" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 528, 0 )
+
+[node name="hallway2Adjacent2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 528, 512 )
+
+[node name="storeRoom" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 784, 128 )
+rotation = 3.14159
+_sections_unfolded = [ "Transform" ]
+
+[node name="hallway2Adjacent3" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 528, 256 )
+rotation = 3.14159
+_sections_unfolded = [ "Transform" ]
+
+[node name="messHall" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 400, -512 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="stairs" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 528, -768 )
+
+[node name="hallway3" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 784, 768 )
+
+[node name="hallway2Opposite2" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 272, 768 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="armory" parent="." index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 272, 768 )
+
+[node name="hallway2Opposite3" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 784, 768 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="barracks" parent="." index="13" instance=ExtResource( 11 )]
+
+position = Vector2( 1296, 640 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="." index="14"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="shooter" parent="." index="15" instance=ExtResource( 12 )]
+
+position = Vector2( 336, -896 )
+
+[node name="shooter2" parent="." index="16" instance=ExtResource( 12 )]
+
+position = Vector2( 464, -896 )
+
+[node name="stabber" parent="." index="17" instance=ExtResource( 13 )]
+
+position = Vector2( 352, -656 )
+health = 5
+
+[node name="stabber2" parent="." index="18" instance=ExtResource( 13 )]
+
+position = Vector2( 544, -576 )
+health = 5
+
+[node name="shooter3" parent="." index="19" instance=ExtResource( 12 )]
+
+position = Vector2( 256, -400 )
+
+[node name="shooter4" parent="." index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 368, -400 )
+
+[node name="shooter5" parent="." index="21" instance=ExtResource( 12 )]
+
+position = Vector2( 464, -400 )
+
+[node name="shooter6" parent="." index="22" instance=ExtResource( 12 )]
+
+position = Vector2( 544, -400 )
+
+[node name="stabber3" parent="." index="23" instance=ExtResource( 13 )]
+
+position = Vector2( 400, 128 )
+health = 5
+
+[node name="stabber4" parent="." index="24" instance=ExtResource( 13 )]
+
+position = Vector2( 128, 704 )
+health = 5
+
+[node name="shooter7" parent="." index="25" instance=ExtResource( 12 )]
+
+position = Vector2( 112, 624 )
+
+[node name="stabber5" parent="." index="26" instance=ExtResource( 13 )]
+
+position = Vector2( 656, 640 )
+health = 5
+
+[node name="stabber6" parent="." index="27" instance=ExtResource( 13 )]
+
+position = Vector2( 1120, 576 )
+health = 5
+
+[node name="stabber7" parent="." index="28" instance=ExtResource( 13 )]
+
+position = Vector2( 1120, 736 )
+health = 5
+
+[node name="shooter8" parent="." index="29" instance=ExtResource( 12 )]
+
+position = Vector2( 1264, 704 )
+
+[node name="shooter9" parent="." index="30" instance=ExtResource( 12 )]
+
+position = Vector2( 1424, 608 )
+
+[node name="stabber8" parent="." index="31" instance=ExtResource( 13 )]
+
+position = Vector2( 1376, 816 )
+health = 5
+
+[node name="stabber9" parent="." index="32" instance=ExtResource( 13 )]
+
+position = Vector2( 1376, 480 )
+health = 5
+
+

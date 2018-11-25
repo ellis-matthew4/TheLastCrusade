@@ -23,7 +23,7 @@ outlines = [ PoolVector2Array( -240, -48, -48, -48, -48, -240, -128, -240, -128,
 [node name="level3" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-START = null
+START = Vector2( -128, -128 )
 
 [node name="startRoom" parent="." index="0" instance=ExtResource( 2 )]
 
