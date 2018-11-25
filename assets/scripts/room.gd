@@ -16,6 +16,9 @@ var boxels = []
 
 func _ready():
 	assignBoxels()
+	for list in boxels:
+		for b in list:
+			add_child(b)
 
 func rotate():
 	rotation_degrees -= 90
