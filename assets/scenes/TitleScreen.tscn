@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/Title_Screen.png" type="Texture" id=2]
@@ -6,8 +6,17 @@
 [ext_resource path="res://assets/sprites/Play_hover.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/Quit.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/Quit_hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/font/AlbertText-Bold.ttf" type="DynamicFontData" id=7]
 
-[node name="TitleScreen" type="CanvasLayer" index="0"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="TitleScreen" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -86,6 +95,29 @@ group = null
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 6 )
 _sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="Control" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 819.0
+margin_top = 639.0
+margin_right = 1190.0
+margin_bottom = 683.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "WASD: Move   SPACE: Attack"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_Play_pressed"]
 

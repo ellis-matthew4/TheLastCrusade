@@ -37,7 +37,6 @@ func _ready():
 	
 func _process(delta):
 	if health == 0:
-		globs.health[0] += 1
 		globs.bumpScore()
 		queue_free()
 	playerPoint = player.global_position
@@ -104,5 +103,6 @@ func _on_Timer_timeout():
 		add_child(a)
 	
 func damage(body):
+	$HealthBar.damage()
 	health -= 1
 	

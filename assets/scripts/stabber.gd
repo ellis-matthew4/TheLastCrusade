@@ -35,7 +35,6 @@ func _ready():
 	
 func _process(delta):
 	if health == 0:
-		globs.health[0] += 1
 		globs.bumpScore()
 		queue_free()
 	playerPoint = player.global_position
@@ -110,6 +109,7 @@ func _on_hitbox_body_entered(body):
 		body.damage(self)
 
 func damage(body):
+	$HealthBar.damage()
 	health -= 1
 	var angle = global_position.angle_to_point(body.global_position)
 	knockbackDir = Vector2(cos(angle), sin(angle))

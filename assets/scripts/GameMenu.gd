@@ -3,6 +3,7 @@ extends CanvasLayer
 signal Switch
 
 func _ready():
+	$Control/Label3.text = "Final Score: " + globs.score
 	if globs.lose:
 		globs.playMusic("res://assets/sounds/Hymns/Martyr.ogg")
 	

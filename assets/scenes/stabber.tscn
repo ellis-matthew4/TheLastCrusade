@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/scripts/stabber.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/stabby_up1.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/char/stabby_downLeft2.png" type="Texture" id=19]
 [ext_resource path="res://assets/char/stabby_downLeft3.png" type="Texture" id=20]
 [ext_resource path="res://assets/char/stabby_downLeft4.png" type="Texture" id=21]
+[ext_resource path="res://assets/scenes/HealthBar.tscn" type="PackedScene" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -61,7 +62,7 @@ radius = 7.0
 custom_solver_bias = 0.0
 radius = 12.0
 
-[node name="stabber" type="KinematicBody2D" index="0" groups=[
+[node name="stabber" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
@@ -118,6 +119,10 @@ exclude_parent = true
 cast_to = Vector2( 0, 1000 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="HealthBar" parent="." index="6" instance=ExtResource( 22 )]
+
+position = Vector2( -8.04577, -9.67111 )
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 
