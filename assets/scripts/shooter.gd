@@ -13,7 +13,7 @@ var path = PoolVector2Array()
 var initialposition = Vector2()
 var knockback = false
 
-var health = 1
+export var health = 1
 
 var motion = Vector2()
 var knockbackDir = Vector2(0,0)
