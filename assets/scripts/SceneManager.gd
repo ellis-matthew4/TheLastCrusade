@@ -32,7 +32,7 @@ func switch():
 	remove_child(scene)
 	scene = x.instance()
 	p.position = scene.START #Starting position, change later
-	k.position = scene.START - Vector2(32,-32)
+	k.position = scene.START - Vector2(16,-32)
 	scene.connect("Switch", self, "switch")
 	add_child(scene)
 	if get_tree().paused:

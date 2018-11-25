@@ -18,6 +18,8 @@ export var health = 1
 var motion = Vector2()
 var knockbackDir = Vector2(0,0)
 
+var aggro = false
+
 var arrow = preload("res://assets/scenes/arrow.tscn")
 
 func set_nav(new_nav):
@@ -50,6 +52,10 @@ func _process(delta):
 		$Sprite.play("down")
 	else:
 		$Sprite.play("downLeft")
+		
+	if !aggro:
+		if global_position.distance_to(playerPoint) < 300:
+			aggro = true
 		
 	if playerAngle < 90 or playerAngle > -90:
 		$Sprite.flip_h = false
@@ -92,8 +98,9 @@ func snap():
 
 func _on_Timer_timeout():
 	$Timer.start()
-	var a = arrow.instance()
-	add_child(a)
+	if aggro:
+		var a = arrow.instance()
+		add_child(a)
 	
 func damage(body):
 	health -= 1
