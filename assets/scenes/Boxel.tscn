@@ -9,6 +9,6 @@ Top = false
 Right = false
 Bottom = false
 Left = false
-pathLength = null
+pathLength = 0
 
 

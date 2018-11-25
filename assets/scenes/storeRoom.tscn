@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/scripts/room.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=2]
 
-[node name="storeRoom" type="Node2D"]
+[node name="storeRoom" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 BoxelPosition = null

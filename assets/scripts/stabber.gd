@@ -18,6 +18,8 @@ export var health = 3
 var motion = Vector2()
 var knockbackDir = Vector2(0,0)
 
+var aggro = false
+
 func set_nav(new_nav):
 	nav = new_nav
 	update_path()
@@ -33,10 +35,12 @@ func _ready():
 	
 func _process(delta):
 	if health == 0:
+		globs.health[0] += 1
 		globs.bumpScore()
 		queue_free()
 	playerPoint = player.global_position
 	playerAngle = rad2deg(global_position.angle_to_point(playerPoint))
+	$view.rotation_degrees = playerAngle + 90
 	if (playerAngle < -157.5 or playerAngle > 157.5) or (playerAngle > -22.5 and playerAngle <= 22.5):
 		$Sprite.play("left")
 	elif (playerAngle > 112.5 and playerAngle <= 157.5) or (playerAngle > 22.5 and playerAngle <= 67.5):
@@ -47,6 +51,12 @@ func _process(delta):
 		$Sprite.play("down")
 	else:
 		$Sprite.play("downLeft")
+		
+	if $view.is_colliding():
+		print("yeet")
+		if $view.get_collider().is_in_group("pc"):
+			print("yote")
+			aggro = true
 		
 	if playerAngle < 90 or playerAngle > -90:
 		$Sprite.flip_h = false
@@ -63,7 +73,7 @@ func _process(delta):
 		move_and_slide(motion)
 	else:
 		if position.distance_to(playerPoint) > 8:
-			if path.size() > 0:
+			if path.size() > 0 and aggro:
 				move_towards(initialposition, path[0], delta)
 		else:
 			$Sprite.playing = false

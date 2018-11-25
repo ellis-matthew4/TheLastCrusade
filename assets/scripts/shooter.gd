@@ -35,6 +35,7 @@ func _ready():
 	
 func _process(delta):
 	if health == 0:
+		globs.health[0] += 1
 		globs.bumpScore()
 		queue_free()
 	playerPoint = player.global_position

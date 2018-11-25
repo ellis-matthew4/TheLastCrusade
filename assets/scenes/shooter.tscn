@@ -1,14 +1,14 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/scripts/shooter.gd" type="Script" id=1]
-[ext_resource path="res://assets/char/shoot_boi_left1.png" type="Texture" id=2]
-[ext_resource path="res://assets/char/shoot_boi_left2.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/shoot_boi_left3.png" type="Texture" id=4]
-[ext_resource path="res://assets/char/shoot_boi_left4.png" type="Texture" id=5]
-[ext_resource path="res://assets/char/shooty_boi_up1.png" type="Texture" id=6]
-[ext_resource path="res://assets/char/shooty_boi_up2.png" type="Texture" id=7]
-[ext_resource path="res://assets/char/shooty_boi_up3.png" type="Texture" id=8]
-[ext_resource path="res://assets/char/shooty_boi_up4.png" type="Texture" id=9]
+[ext_resource path="res://assets/char/shooty_boi_up1.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/shooty_boi_up2.png" type="Texture" id=3]
+[ext_resource path="res://assets/char/shooty_boi_up3.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/shooty_boi_up4.png" type="Texture" id=5]
+[ext_resource path="res://assets/char/shoot_boi_left1.png" type="Texture" id=6]
+[ext_resource path="res://assets/char/shoot_boi_left2.png" type="Texture" id=7]
+[ext_resource path="res://assets/char/shoot_boi_left3.png" type="Texture" id=8]
+[ext_resource path="res://assets/char/shoot_boi_left4.png" type="Texture" id=9]
 [ext_resource path="res://assets/char/shooty_boi_upLeft1.png" type="Texture" id=10]
 [ext_resource path="res://assets/char/shooty_boi_upLeft2.png" type="Texture" id=11]
 [ext_resource path="res://assets/char/shooty_boi_upLeft3.png" type="Texture" id=12]
@@ -27,12 +27,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "up",
+"name": "left",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -56,7 +56,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="shooter" type="KinematicBody2D" index="0" groups=[
+[node name="shooter" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
