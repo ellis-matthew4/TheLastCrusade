@@ -113,7 +113,7 @@ autostart = true
 
 [node name="view" type="RayCast2D" parent="." index="5"]
 
-enabled = false
+enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 1000 )
 collision_mask = 1

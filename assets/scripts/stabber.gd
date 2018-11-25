@@ -53,8 +53,7 @@ func _process(delta):
 		$Sprite.play("downLeft")
 		
 	if $view.is_colliding():
-		print("yeet")
-		if $view.get_collider().is_in_group("pc"):
+		if $view.get_collider().global_position == playerPoint:
 			print("yote")
 			aggro = true
 		
