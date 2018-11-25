@@ -88,12 +88,16 @@ func genFloor():
 			var possible
 			if queue[0].Top:
 				possible = possiblePositionsTop(queue[0], temp, temp.instance().BoxelSize)
+				queue[0].Top = false
 			elif queue[0].Bottom:
 				possible = possiblePositionsBottom(queue[0], temp, temp.instance().BoxelSize)
+				queue[0].Bottom = false
 			elif queue[0].Right:
 				possible = possiblePositionsRight(queue[0], temp, temp.instance().BoxelSize)
+				queue[0].Right = false
 			elif queue[0].Left:
 				possible = possiblePositionsLeft(queue[0], temp, temp.instance().BoxelSize)
+				queue[0].Left = false
 			if possible.size() > 0:
 				var r = possible[randi() % possible.size()]
 				add_child(r)
@@ -103,12 +107,16 @@ func genFloor():
 				increasePathLength()
 				rooms.append(r) 
 		else:
-			queue.pop()
+			print("Popping")
+			queue.pop_front()
 
 func increasePathLength():
-	for b in queue:
-		if b.pathLength == 0:
-			b.pathLength = queue[0].pathLength + 1
+	print("Increaseing path length " + str(queue.size()))
+	for b in range(queue.size()):
+		print("Checking: " + str(queue[b]))
+		if queue[b].pathLength == 0:
+			print("Increasing path length now")
+			queue[b].pathLength = queue[0].pathLength + 1
 
 # adds the start room to the virtual floor and the queue
 func addStartRoom():
@@ -132,6 +140,7 @@ func addToQueue(k):
 	for y in range(k.BoxelSize):
 		for x in range(k.BoxelSize):
 			if k.boxels[y][x].Top or k.boxels[y][x].Bottom or k.boxels[y][x].Left or k.boxels[y][x].Right:
+				k.boxels[y][x].pathLength = 0
 				queue.append(k.boxels[y][x])
 
 # checks to see if room has any possible open connections
@@ -139,6 +148,7 @@ func hasOpenConnections(k):
 	# print("Checking room " + k.type + " for open connections...")
 	print("Checking boxel for open connections...")
 	var pos = getPos(k)
+	print(str(pos.x) + " " + str(pos.y))
 	if k.Top and not virtualFloor[pos.y - 1][pos.x].active:
 		return true
 	if k.Bottom and not virtualFloor[pos.y + 1][pos.x].active:
@@ -161,10 +171,11 @@ func getPos(k):
 
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsTop(k, l, BoxelSize):
-	print("Checking possible top positions for room " + k.type)
+	# print("Checking possible top positions for room " + k.type)
 	var possible = []
+	var pos = getPos(k)
 	for offset in range(BoxelSize):
-		var temp = Vector2(k.BoxelPosition.x - offset, k.BoxelPosition.y - BoxelSize)
+		var temp = Vector2(pos.x - offset, pos.y - BoxelSize)
 		var free = true
 		if temp.x >= 0 and temp.y >= 0:
 			for y in range(BoxelSize):
@@ -173,11 +184,13 @@ func possiblePositionsTop(k, l, BoxelSize):
 						free = false
 			if free:
 				var tRoom = l.instance()
+				add_child(tRoom)
 				tRoom.BoxelPosition = temp
 				for i in range(4):
 					if connectionsOpen(tRoom):
 						possible.append(tRoom)
 					rotateRoom(tRoom)
+	removeChildren(possible)
 	return possible
 	
 # take in the current boxel, the room type, and the boxelsize
@@ -201,14 +214,21 @@ func possiblePositionsBottom(k, l, BoxelSize):
 					if connectionsOpen(tRoom):
 						possible.append(tRoom)
 					rotateRoom(tRoom)
+	removeChildren(possible)
 	return possible
-	
+
+# remove children from list p
+func removeChildren(p):
+	for item in p:
+		remove_child(item)
+
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsLeft(k, l, BoxelSize):
-	print("Checking possible left positions for room " + k.type)
+	# print("Checking possible left positions for room " + k.type)
 	var possible = []
+	var pos = getPos(k)
 	for offset in range(BoxelSize):
-		var temp = Vector2(k.BoxelPosition.x - BoxelSize, k.BoxelPosition.y - offset)
+		var temp = Vector2(pos.x - BoxelSize, pos.y - offset)
 		var free = true
 		if temp.x >= 0 and temp.y >= 0:
 			for y in range(BoxelSize):
@@ -217,19 +237,22 @@ func possiblePositionsLeft(k, l, BoxelSize):
 						free = false
 			if free:
 				var tRoom = l.instance()
+				add_child(tRoom)
 				tRoom.BoxelPosition = temp
 				for i in range(4):
 					if connectionsOpen(tRoom):
 						possible.append(tRoom)
 					rotateRoom(tRoom)
+	removeChildren(possible)
 	return possible
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsRight(k, l, BoxelSize):
-	print("Checking possible right positions for room " + k.type)
+	# print("Checking possible right positions for room " + k.type)
+	var pos = getPos(k)
 	var possible = []
 	for offset in range(BoxelSize):
-		var temp = Vector2(k.BoxelPosition.x + 1, k.BoxelPosition.y - offset)
+		var temp = Vector2(pos.x + 1, pos.y - offset)
 		var free = true
 		if temp.x >= 0 and temp.y >= 0:
 			for y in range(BoxelSize):
@@ -238,11 +261,13 @@ func possiblePositionsRight(k, l, BoxelSize):
 						free = false
 			if free:
 				var tRoom = l.instance()
+				add_child(tRoom)
 				tRoom.BoxelPosition = temp
 				for i in range(4):
 					if connectionsOpen(tRoom):
 						possible.append(tRoom)
 					rotateRoom(tRoom)
+	removeChildren(possible)
 	return possible
 
 
