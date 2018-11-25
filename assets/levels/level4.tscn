@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/scenes/startRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/armory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/barracks.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/hallway4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/hallway3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scenes/conferenceRoom.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/scenes/messHall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/stairs.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/scenes/shooter.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/scenes/stabber.tscn" type="PackedScene" id=10]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 16, 208, 16, 16, 208, 16, 208, 96, 352, -48, 144, -48, 144, -496, 592, -496, 592, -48, 384, -48, 352, 96, 384, 96, 768, 96, 768, 80, 912, 80, 912, 144, 912, -16, 912, 32, 768, 32, 768, -128, 912, -128, 912, -48, 928, -16, 992, -48, 960, -16, 992, -80, 1232, -80, 1232, 96, 1296, 96, 1296, 16, 1488, 16, 1488, 208, 1296, 208, 1296, 128, 1232, 128, 992, -16, 1232, 320, 992, 320, 928, 144, 960, 176, 912, 176, 912, 240, 768, 240, 768, 128, 640, 128, 640, 272, 704, 272, 704, 288, 544, 448, 544, 288, 720, 288, 720, 448, 704, 448, 704, 464, 544, 464, 528, 448, 528, 288, 544, 272, 608, 272, 608, 128, 384, 128, 384, 272, 464, 272, 464, 464, 272, 464, 272, 272, 352, 272, 352, 128, 208, 128, 208, 208 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 7, 8, 9 ), PoolIntArray( 4, 7, 9 ), PoolIntArray( 10, 4, 9, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19 ), PoolIntArray( 19, 20, 21 ), PoolIntArray( 16, 19, 21, 22 ), PoolIntArray( 22, 21, 23, 24 ), PoolIntArray( 23, 25, 26, 27 ), PoolIntArray( 28, 29, 30, 31 ), PoolIntArray( 31, 32, 33 ), PoolIntArray( 28, 31, 33, 27 ), PoolIntArray( 27, 33, 34, 35 ), PoolIntArray( 34, 36, 37, 35 ), PoolIntArray( 23, 27, 35 ), PoolIntArray( 23, 35, 24 ), PoolIntArray( 38, 22, 24, 39 ), PoolIntArray( 38, 39, 40, 15 ), PoolIntArray( 40, 41, 42, 43 ), PoolIntArray( 15, 40, 43, 12 ), PoolIntArray( 11, 12, 43, 44 ), PoolIntArray( 45, 46, 47, 48, 49 ), PoolIntArray( 47, 50, 51, 52 ), PoolIntArray( 52, 53, 54, 48 ), PoolIntArray( 47, 52, 48 ), PoolIntArray( 48, 55, 56, 49 ), PoolIntArray( 49, 57, 58 ), PoolIntArray( 45, 49, 58 ), PoolIntArray( 44, 45, 58, 59 ), PoolIntArray( 11, 44, 59 ), PoolIntArray( 11, 59, 60, 10 ), PoolIntArray( 61, 62, 63, 64 ), PoolIntArray( 64, 65, 66 ), PoolIntArray( 61, 64, 66 ), PoolIntArray( 60, 61, 66, 67 ), PoolIntArray( 10, 60, 67, 3 ), PoolIntArray( 3, 67, 68 ), PoolIntArray( 0, 3, 68 ), PoolIntArray( 0, 68, 69 ) ]
+outlines = [ PoolVector2Array( 16, 16, 208, 16, 208, 96, 352, 96, 352, -48, 144, -48, 144, -496, 592, -496, 592, -48, 384, -48, 384, 96, 768, 96, 768, 80, 912, 80, 912, 144, 928, 144, 928, -16, 912, -16, 912, 32, 768, 32, 768, -128, 912, -128, 912, -48, 992, -48, 992, -80, 1232, -80, 1232, 96, 1296, 96, 1296, 16, 1488, 16, 1488, 208, 1296, 208, 1296, 128, 1232, 128, 1232, 320, 992, 320, 992, -16, 960, -16, 960, 176, 912, 176, 912, 240, 768, 240, 768, 128, 640, 128, 640, 272, 704, 272, 704, 288, 720, 288, 720, 448, 704, 448, 704, 464, 544, 464, 544, 448, 528, 448, 528, 288, 544, 288, 544, 272, 608, 272, 608, 128, 384, 128, 384, 272, 464, 272, 464, 464, 272, 464, 272, 272, 352, 272, 352, 128, 208, 128, 208, 208, 16, 208 ) ]
+
+[node name="Level 4" type="Node2D" index="0"]
+
+[node name="startRoom" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -16, 240 )
+rotation = 1.5708
+
+[node name="armory" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 496, 240 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="barracks" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 368, -272 )
+
+[node name="hallway4" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 496, 240 )
+
+[node name="hallway3" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 496, -16.0001 )
+rotation = 3.14159
+
+[node name="conferenceRoom" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 752, 496 )
+
+[node name="messHall" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 1008, 112 )
+
+[node name="stairs" parent="." index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 1264, 240 )
+rotation = 1.5708
+
+[node name="shooter" parent="." index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 432, 304 )
+
+[node name="shooter2" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 880, -96 )
+
+[node name="shooter3" parent="." index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 880, 208 )
+
+[node name="shooter4" parent="." index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 1184, 208 )
+
+[node name="shooter5" parent="." index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 1184, 16 )
+
+[node name="shooter6" parent="." index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 176, -256 )
+
+[node name="shooter7" parent="." index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 352, -192 )
+
+[node name="shooter8" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 496, -256 )
+
+[node name="shooter9" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 624, 368 )
+
+[node name="stabber" parent="." index="17" instance=ExtResource( 10 )]
+
+position = Vector2( 560, -96 )
+
+[node name="stabber2" parent="." index="18" instance=ExtResource( 10 )]
+
+position = Vector2( 304, 448 )
+
+[node name="stabber3" parent="." index="19" instance=ExtResource( 10 )]
+
+position = Vector2( 336, 352 )
+
+[node name="stabber4" parent="." index="20" instance=ExtResource( 10 )]
+
+position = Vector2( 288, -128 )
+
+[node name="stabber5" parent="." index="21" instance=ExtResource( 10 )]
+
+position = Vector2( 544, -416 )
+
+[node name="stabber6" parent="." index="22" instance=ExtResource( 10 )]
+
+position = Vector2( 240, -320 )
+
+[node name="stabber7" parent="." index="23" instance=ExtResource( 10 )]
+
+position = Vector2( 160, -416 )
+
+[node name="stabber8" parent="." index="24" instance=ExtResource( 10 )]
+
+position = Vector2( 240, -480 )
+
+[node name="stabber9" parent="." index="25" instance=ExtResource( 10 )]
+
+position = Vector2( 544, 320 )
+
+[node name="stabber10" parent="." index="26" instance=ExtResource( 10 )]
+
+position = Vector2( 704, 416 )
+
+[node name="stabber11" parent="." index="27" instance=ExtResource( 10 )]
+
+position = Vector2( 880, 112 )
+
+[node name="stabber12" parent="." index="28" instance=ExtResource( 10 )]
+
+position = Vector2( 880, 0 )
+
+[node name="stabber13" parent="." index="29" instance=ExtResource( 10 )]
+
+position = Vector2( 1120, 96 )
+
+[node name="stabber14" parent="." index="30" instance=ExtResource( 10 )]
+
+position = Vector2( 1120, 192 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="." index="31"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+
