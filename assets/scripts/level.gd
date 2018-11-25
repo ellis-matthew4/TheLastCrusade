@@ -12,6 +12,9 @@ func _process(delta):
 		globs.path = "res://assets/scenes/LoseMenu.tscn"
 		globs.lose = true
 		emit_signal("Switch")
+		
+	if Input.is_key_pressed(KEY_K):
+		switch()
 
 func switch():
 	get_tree().current_scene.level += 1
