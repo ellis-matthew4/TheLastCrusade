@@ -1,24 +1,27 @@
 extends Node2D
 
-var Boxel = load("res://assets/scripts/boxel.gd")
+var Boxel = preload("res://assets/scenes/Boxel.tscn")
 
 export(Vector2) var BoxelPosition
 export(int) var BoxelSize
-export(int) var TileSize
-export(bool) var Top
-export(bool) var Right
-export(bool) var Bottom
-export(bool) var Left
+export(bool) var Top = false
+export(bool) var Right = false
+export(bool) var Bottom = false
+export(bool) var Left = false
+export var type = ""
 var active = false
+var TileSize = 16
 
 var boxels = []
 
 func _ready():
 	if BoxelSize == 1:
 		position += Vector2(128,128)
-		var b = Boxel.instance()
-		b.Top = Top; b.Right = Right; b.Bottom = Bottom; b.Left = Left
-		boxels.append(b)
+		boxels.append([Boxel.instance()])
+		boxels[0][0].Top = Top
+		boxels[0][0].Left = Left
+		boxels[0][0].Right = Right
+		boxels[0][0].Bottom = Bottom
 	elif BoxelSize == 2:
 		boxels.append([Boxel.instance(), Boxel.instance()])
 		boxels.append([Boxel.instance(), Boxel.instance()])

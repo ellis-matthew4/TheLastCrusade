@@ -8,11 +8,11 @@
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 1
-TileSize = null
-Top = null
+Top = false
 Right = true
-Bottom = null
-Left = null
+Bottom = false
+Left = false
+type = "Armory"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

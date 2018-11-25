@@ -8,11 +8,11 @@
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 2
-TileSize = null
-Top = null
-Right = null
+Top = false
+Right = false
 Bottom = true
-Left = null
+Left = false
+type = "Barracks"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

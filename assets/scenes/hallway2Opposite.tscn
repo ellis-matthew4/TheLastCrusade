@@ -8,11 +8,11 @@
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 1
-TileSize = null
 Top = true
-Right = null
+Right = false
 Bottom = true
-Left = null
+Left = false
+type = "H2O"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

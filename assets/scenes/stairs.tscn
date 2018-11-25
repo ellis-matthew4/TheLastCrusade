@@ -14,11 +14,11 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 BoxelPosition = null
 BoxelSize = 1
-TileSize = null
 Top = false
-Right = null
+Right = false
 Bottom = true
-Left = null
+Left = false
+type = "Stairs"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

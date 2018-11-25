@@ -8,11 +8,11 @@
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 2
-TileSize = null
-Top = null
+Top = false
 Right = true
-Bottom = null
+Bottom = false
 Left = true
+type = "Mess"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

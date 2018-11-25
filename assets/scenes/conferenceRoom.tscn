@@ -7,12 +7,12 @@
 
 script = ExtResource( 1 )
 BoxelPosition = null
-BoxelSize = null
-TileSize = null
+BoxelSize = 1
 Top = true
-Right = null
-Bottom = null
-Left = null
+Right = false
+Bottom = false
+Left = false
+type = "Conf"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

@@ -9,11 +9,11 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 BoxelPosition = null
 BoxelSize = 1
-TileSize = null
 Top = true
 Right = true
 Bottom = false
 Left = true
+type = "H3"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

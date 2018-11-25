@@ -8,11 +8,11 @@
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 1
-TileSize = null
 Top = true
 Right = true
 Bottom = false
-Left = null
+Left = false
+type = "H2A"
 
 [node name="ground" type="TileMap" parent="." index="0"]
 

@@ -4,19 +4,17 @@ var start
 
 var boxel = load("res://assets/scenes/Boxel.tscn")
 
-var startRoom = load("res://assets/scenes/StartRoom.tscn")
-var hallway2Opposite = load("res://assets/scenes/Hallway2Opposite.tscn")
-var hallway2Adjacent = load("res://assets/scenes/Hallway2Adjacent.tscn")
-var hallway3 = load("res://assets/scenes/Hallway3.tscn")
-var hallway4 = load("res://assets/scenes/Hallway4.tscn")
-var storeRoom = load("res://assets/scenes/StoreRoom.tscn")
-var armory = load("res://assets/scenes/Armory.tscn")
-var barracks = load("res://assets/scenes/Barracks.tscn")
-var messHall = load("res://assets/scenes/MessHall.tscn")
-var conferenceRoom = load("res://assets/scenes/ConferenceRoom.tscn")
-var bossRoom = load("res://assets/scenes/BossRoom.tscn")
-var stairsUp = load("res://assets/scenes/StartRoom.tscn")
-var stairDown = load("res://assets/scenes/StartRoom.tscn")
+var startRoom = load("res://assets/scenes/startRoom.tscn")
+var hallway2Opposite = load("res://assets/scenes/hallway2Opposite.tscn")
+var hallway2Adjacent = load("res://assets/scenes/hallway2Adjacent.tscn")
+var hallway3 = load("res://assets/scenes/hallway3.tscn")
+var hallway4 = load("res://assets/scenes/hallway4.tscn")
+var storeRoom = load("res://assets/scenes/storeRoom.tscn")
+var armory = load("res://assets/scenes/armory.tscn")
+var barracks = load("res://assets/scenes/barracks.tscn")
+var messHall = load("res://assets/scenes/messHall.tscn")
+var conferenceRoom = load("res://assets/scenes/conferenceRoom.tscn")
+var stairDown = load("res://assets/scenes/stairs.tscn")
 
 var singleConnections = [barracks, storeRoom]
 var specialRooms = []
@@ -35,6 +33,7 @@ signal Switch
 
 # sets a random floor size
 func setFloorSize():
+	print("Setting floor size...")
 	floorSize = randi()%(MAX_SIZE - MIN_SIZE) + MIN_SIZE
 	for i in range(floorSize):
 		var v = []
@@ -44,6 +43,7 @@ func setFloorSize():
 
 # marks grid points on the virtual floor has taken
 func markVRoom(k):
+	print("Marking virtual room " + k.type)
 	for i in range(k.BoxelSize):
 		for j in range(k.BoxelSize):
 			var b = virtualFloor[k.BoxelPosition.x + i][k.BoxelPosition.y + j]
@@ -52,10 +52,12 @@ func markVRoom(k):
 
 # rotates a room
 func rotateRoom(k):
+	print("Rotating room " + k.type)
 	k.rotate()
 
 # creates random rotation
 func randRot():
+	print("Generating random integer...")
 	var rot = randi() % 4 + 1
 	return rot
 
@@ -63,13 +65,16 @@ func randRot():
 func randPos():
 	var x = randi() % floorSize
 	var y = randi() % floorSize
+	print("Generating random position " + str(x) + ", " + str(y))
 	return Vector2(x, y)
 
 func setTruePos(k):
+	print("Setting true position of room " + k.type)
 	k.position = Vector2((k.BoxelPosition.x * k.BoxelSize * k.TileSize) / 2, (k.BoxelPosition.y * k.BoxelSize * k.TileSize) / 2)
 
 # generates a floor
 func genFloor():
+	print("Generating floor...")
 	setFloorSize()
 	addStartRoom()
 	while(queue.size() > 0):
@@ -102,20 +107,23 @@ func genFloor():
 
 # adds the start room to the virtual floor and the queue
 func addStartRoom():
+	print("Adding start room...")
 	var s = startRoom.instance()
+	add_child(s)
 	s.BoxelPosition = randPos()
 	for i in range(randRot()):
 		rotateRoom(s)
 	while(not connectionsOpen(s)):
 		rotateRoom(s)
 	start = s
-	start.pathLength = 1
+	start.pathLength = 13
 	markVRoom(start)
 	addToQueue(start)
 	rooms.append(start)
 
 # adds the boxel to the queue
 func addToQueue(k):
+	print("Adding room " + k.type + " to queue...")
 	for y in range(k.BoxelSize):
 		for x in range(k.BoxelSize):
 			if k.boxels[y][x].Top or k.boxels[y][x].Bottom or k.boxels[y][x].Left or k.boxels[y][x].Right:
@@ -123,6 +131,7 @@ func addToQueue(k):
 
 # checks to see if room has any possible open connections
 func hasOpenConnections(k):
+	print("Checking room " + k.type + " for open connections...")
 	var pos = getPos(k)
 	if k.Top and not virtualFloor.boxels[pos.y - 1][pos.x].active:
 		return true
@@ -136,6 +145,7 @@ func hasOpenConnections(k):
 
 # gets the position of the boxel in the virtualFloor
 func getPos(k):
+	print("Getting position for room " + k.type)
 	for y in range(floorSize):
 		for x in range(floorSize):
 			if virtualFloor[y][x] == k:
@@ -143,6 +153,7 @@ func getPos(k):
 
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsTop(k, l, BoxelSize):
+	print("Checking possible top positions for room " + k.type)
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x - offset, k.BoxelPosition.y - BoxelSize)
@@ -163,6 +174,7 @@ func possiblePositionsTop(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsBottom(k, l, BoxelSize):
+	print("Checking possible bottom positions for room " + k.type)
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x - offset, k.BoxelPosition.y + 1)
@@ -183,6 +195,7 @@ func possiblePositionsBottom(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsLeft(k, l, BoxelSize):
+	print("Checking possible left positions for room " + k.type)
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x - BoxelSize, k.BoxelPosition.y - offset)
@@ -203,6 +216,7 @@ func possiblePositionsLeft(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsRight(k, l, BoxelSize):
+	print("Checking possible right positions for room " + k.type)
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x + 1, k.BoxelPosition.y - offset)
@@ -224,6 +238,7 @@ func possiblePositionsRight(k, l, BoxelSize):
 
 # Checks to see if the room's open connections lead to a valid location
 func connectionsOpen(k):
+	print("Checking open connections for room " + k.type)
 	for y in range(k.BoxelSize):
 		for x in range(k.BoxelSize):
 			# check only the outer perimeter of the room
