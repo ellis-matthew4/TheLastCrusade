@@ -54,7 +54,6 @@ func _process(delta):
 		
 	if $view.is_colliding():
 		if $view.get_collider().global_position == playerPoint:
-			print("yote")
 			aggro = true
 		
 	if playerAngle < 90 or playerAngle > -90:

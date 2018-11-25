@@ -51,7 +51,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=10]
 
 custom_solver_bias = 0.0
 radius = 7.0
@@ -169,7 +169,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Scale" ]
 
-[node name="priest" type="KinematicBody2D" groups=[
+[node name="priest" type="KinematicBody2D" index="0" groups=[
 "priest",
 ]]
 
@@ -188,14 +188,14 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = false
+autostart = true
 
 [node name="knockback" type="Timer" parent="." index="3"]
 
@@ -268,7 +268,7 @@ _sections_unfolded = [ "Process Material", "Time" ]
 [node name="enchantTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 60.0
 one_shot = true
 autostart = false
 
