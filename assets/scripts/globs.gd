@@ -8,6 +8,8 @@ var sfxStream
 var musicStream
 var priestStream
 
+var lose = false
+
 func _ready():
 	sfxStream = AudioStreamPlayer.new()
 	musicStream = AudioStreamPlayer.new()
@@ -19,6 +21,8 @@ func _ready():
 
 func initializeGame():
 	health = [ 10, 10 ]
+	score = 0
+	lose = false
 	
 func playSound(sound):
 	sfxStream.stream = load(sound)

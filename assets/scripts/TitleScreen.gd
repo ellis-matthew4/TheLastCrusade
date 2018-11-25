@@ -3,10 +3,11 @@ extends CanvasLayer
 signal Switch
 
 func _ready():
-	pass
+	get_tree().current_scene.level = 1
 
 func _on_Play_pressed():
-	globs.path = "res://assets/scenes/FloorBuilder.tscn"
+	globs.initializeGame()
+	globs.path = "res://assets/levels/level1.tscn"
 	emit_signal("Switch")
 
 func _on_Quit_pressed():

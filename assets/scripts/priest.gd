@@ -35,7 +35,7 @@ func update_path():
 func _ready():
 	set_process(true)
 	
-func _process(delta):
+func _process(delta):		
 	playerPoint = player.global_position
 	playerAngle = rad2deg(global_position.angle_to_point(playerPoint))
 	if (playerAngle < -157.5 or playerAngle > 157.5) or (playerAngle > -22.5 and playerAngle <= 22.5):

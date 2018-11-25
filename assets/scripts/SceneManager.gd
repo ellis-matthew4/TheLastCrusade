@@ -6,7 +6,7 @@ var scene
 var player = preload("res://assets/scenes/player.tscn")
 var priest = preload("res://assets/scenes/priest.tscn")
 
-var level = 0
+var level = 1
 
 var p
 var k
@@ -20,19 +20,21 @@ func _ready():
 	
 #The switch method changes the current scene to the one located in the Global Variables
 func switch():
-	if level == 0:
+	if level == 1:
 		p = player.instance()
 		add_child(p)
 		k = priest.instance()
 		add_child(k)
 		k.nav = self
-	level += 1
-	globs.path = "res://assets/levels/level" + str(level) + ".tscn"
 	var x = load(globs.path)
 	remove_child(scene)
 	scene = x.instance()
-	p.position = scene.START #Starting position, change later
-	k.position = scene.START - Vector2(16,-32)
+	if level <= 6 and !globs.lose:
+		p.position = scene.START #Starting position, change later
+		k.position = scene.START - Vector2(16,-32)
+	else:
+		p.queue_free()
+		k.queue_free()
 	scene.connect("Switch", self, "switch")
 	add_child(scene)
 	if get_tree().paused:
