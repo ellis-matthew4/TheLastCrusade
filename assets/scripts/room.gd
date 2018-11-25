@@ -15,6 +15,25 @@ var TileSize = 16
 var boxels = []
 
 func _ready():
+	assignBoxels()
+
+func rotate():
+	rotation_degrees -= 90
+	var old = [ Top, Right, Bottom, Left ]
+	Top = old[1]
+	Right = old[2]
+	Bottom = old[3]
+	Left = old[0]
+	assignBoxels()
+
+#move on to the next floor!
+func _advance(body):
+	pass # replace with function body
+	
+func toString():
+	print("This is a room!")
+	
+func assignBoxels():
 	if BoxelSize == 1:
 		position += Vector2(128,128)
 		boxels.append([Boxel.instance()])
@@ -37,6 +56,7 @@ func _ready():
 		if Bottom:
 			boxels[0][1].Bottom = true
 			boxels[1][1].Bottom = true
+<<<<<<< HEAD
 
 func rotate():
 	rotation_degrees -= 90
@@ -70,3 +90,5 @@ func _advance(body):
 	
 func toString():
 	print("This is a room!")
+=======
+>>>>>>> e351637dc2c49d9bd7e7107337c1b964719c2426

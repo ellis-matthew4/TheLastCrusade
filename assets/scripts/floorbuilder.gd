@@ -136,7 +136,11 @@ func addToQueue(k):
 
 # checks to see if room has any possible open connections
 func hasOpenConnections(k):
+<<<<<<< HEAD
 	# print("Checking room " + k.type + " for open connections...")
+=======
+	print("Checking boxel for open connections...")
+>>>>>>> e351637dc2c49d9bd7e7107337c1b964719c2426
 	var pos = getPos(k)
 	if k.Top and not virtualFloor[pos.y - 1][pos.x].active:
 		return true
@@ -150,7 +154,11 @@ func hasOpenConnections(k):
 
 # gets the position of the boxel in the virtualFloor
 func getPos(k):
+<<<<<<< HEAD
 	# print("Getting position for room " + k.type)
+=======
+	print("Getting position for boxel...")
+>>>>>>> e351637dc2c49d9bd7e7107337c1b964719c2426
 	for y in range(floorSize):
 		for x in range(floorSize):
 			print(str(x) + " " + str(y))
