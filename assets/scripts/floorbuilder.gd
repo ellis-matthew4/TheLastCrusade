@@ -78,7 +78,7 @@ func genFloor():
 	setFloorSize()
 	addStartRoom()
 	while(queue.size() > 0):
-		if hasOpenConnection(queue[0]):
+		if hasOpenConnections(queue[0]):
 			var pos = getPos(queue[0])
 			var temp
 			if queue[0].pathLength >= 8:
@@ -116,9 +116,9 @@ func addStartRoom():
 	while(not connectionsOpen(s)):
 		rotateRoom(s)
 	start = s
-	start.pathLength = 13
 	markVRoom(start)
 	addToQueue(start)
+	queue[0].pathLength = 1
 	rooms.append(start)
 
 # adds the boxel to the queue
@@ -131,21 +131,21 @@ func addToQueue(k):
 
 # checks to see if room has any possible open connections
 func hasOpenConnections(k):
-	print("Checking room " + k.type + " for open connections...")
+	print("Checking boxel for open connections...")
 	var pos = getPos(k)
-	if k.Top and not virtualFloor.boxels[pos.y - 1][pos.x].active:
+	if k.Top and not virtualFloor[pos.y - 1][pos.x].active:
 		return true
-	if k.Bottom and not virtualFloor.boxels[pos.y + 1][pos.x].active:
+	if k.Bottom and not virtualFloor[pos.y + 1][pos.x].active:
 		return true
-	if k.Left and not virtualFloor.boxels[pos.y][pos.x - 1].active:
+	if k.Left and not virtualFloor[pos.y][pos.x - 1].active:
 		return true
-	if k.Right and not virtualFloor.boxels[pos.y][pos.x + 1].active:
+	if k.Right and not virtualFloor[pos.y][pos.x + 1].active:
 		return true
 	return false
 
 # gets the position of the boxel in the virtualFloor
 func getPos(k):
-	print("Getting position for room " + k.type)
+	print("Getting position for boxel...")
 	for y in range(floorSize):
 		for x in range(floorSize):
 			if virtualFloor[y][x] == k:
