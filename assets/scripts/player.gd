@@ -37,6 +37,7 @@ func _physics_process(delta):
 		$Sprite.flip_h = true
 		
 	if Input.is_action_just_pressed("ui_attack"):
+		globs.playSound("res://assets/sounds/sfx/Sword_swing.ogg")
 		var bodyList = $AttackArea.get_overlapping_bodies()
 		var c = cut.instance()
 		add_child(c)

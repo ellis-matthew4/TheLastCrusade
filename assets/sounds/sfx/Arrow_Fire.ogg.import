@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Arrow_Fire.ogg-ea668b581fdd8bc75b070e552671179d.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

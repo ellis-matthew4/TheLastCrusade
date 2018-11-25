@@ -109,6 +109,7 @@ func _on_knockback_timeout():
 	knockback = false
 	
 func enchant():
+	globs.playSound("res://assets/sounds/sfx/Magic.ogg")
 	var k
 	if verseNum < 3:
 		k = 3
