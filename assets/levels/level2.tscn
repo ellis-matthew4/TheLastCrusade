@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/scenes/startRoom.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/scenes/messHall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/scenes/storeRoom.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/scenes/hallway3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/scenes/hallway2Opposite.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/scenes/stairs.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/scenes/shooter.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/scenes/stabber.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/scripts/level.gd" type="Script" id=1]
+[ext_resource path="res://assets/scenes/startRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/messHall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/storeRoom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/hallway3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scenes/hallway2Opposite.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/scenes/stairs.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/shooter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/scenes/stabber.tscn" type="PackedScene" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -17,89 +18,92 @@ outlines = [ PoolVector2Array( -752, -896, -480, -896, -480, -800, -384, -800, -
 
 [node name="Level 2" type="Node2D" index="0"]
 
-[node name="startRoom" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
+START = Vector2( 112, 112 )
+
+[node name="startRoom" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 240, 240 )
 
-[node name="messHall" parent="." index="1" instance=ExtResource( 2 )]
+[node name="messHall" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 112, -272 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="storeRoom" parent="." index="2" instance=ExtResource( 3 )]
+[node name="storeRoom" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -528, -656 )
 
-[node name="hallway3" parent="." index="3" instance=ExtResource( 4 )]
+[node name="hallway3" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -16, -784 )
 rotation = 3.14159
 
-[node name="hallway2Opposite" parent="." index="4" instance=ExtResource( 5 )]
+[node name="hallway2Opposite" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -272, -528 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="stairs" parent="." index="5" instance=ExtResource( 6 )]
+[node name="stairs" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 240, -528 )
 rotation = 1.5708
 
-[node name="shooter" parent="." index="6" instance=ExtResource( 7 )]
+[node name="shooter" parent="." index="6" instance=ExtResource( 8 )]
 
 position = Vector2( -96, -144 )
 
-[node name="shooter2" parent="." index="7" instance=ExtResource( 7 )]
+[node name="shooter2" parent="." index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 224, -144 )
 
-[node name="stabber" parent="." index="8" instance=ExtResource( 8 )]
+[node name="stabber" parent="." index="8" instance=ExtResource( 9 )]
 
 position = Vector2( -96, -80 )
 
-[node name="stabber2" parent="." index="9" instance=ExtResource( 8 )]
+[node name="stabber2" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 208, -80 )
 
-[node name="shooter3" parent="." index="10" instance=ExtResource( 7 )]
+[node name="shooter3" parent="." index="10" instance=ExtResource( 8 )]
 
 position = Vector2( -32, -384 )
 
-[node name="shooter4" parent="." index="11" instance=ExtResource( 7 )]
+[node name="shooter4" parent="." index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 112, -384 )
 
-[node name="shooter5" parent="." index="12" instance=ExtResource( 7 )]
+[node name="shooter5" parent="." index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 256, -384 )
 
-[node name="stabber3" parent="." index="13" instance=ExtResource( 8 )]
+[node name="stabber3" parent="." index="13" instance=ExtResource( 9 )]
 
 position = Vector2( -464, -480 )
 
-[node name="stabber4" parent="." index="14" instance=ExtResource( 8 )]
+[node name="stabber4" parent="." index="14" instance=ExtResource( 9 )]
 
 position = Vector2( -464, -448 )
 
-[node name="shooter6" parent="." index="15" instance=ExtResource( 7 )]
+[node name="shooter6" parent="." index="15" instance=ExtResource( 8 )]
 
 position = Vector2( -512, -864 )
 
-[node name="stabber5" parent="." index="16" instance=ExtResource( 8 )]
+[node name="stabber5" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( -640, -656 )
 
-[node name="stabber6" parent="." index="17" instance=ExtResource( 8 )]
+[node name="stabber6" parent="." index="17" instance=ExtResource( 9 )]
 
 position = Vector2( -640, -736 )
 
-[node name="stabber7" parent="." index="18" instance=ExtResource( 8 )]
+[node name="stabber7" parent="." index="18" instance=ExtResource( 9 )]
 
 position = Vector2( -640, -576 )
 
-[node name="shooter7" parent="." index="19" instance=ExtResource( 7 )]
+[node name="shooter7" parent="." index="19" instance=ExtResource( 8 )]
 
 position = Vector2( 368, -656 )
 
