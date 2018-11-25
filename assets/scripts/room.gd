@@ -45,6 +45,24 @@ func rotate():
 	Right = old[2]
 	Bottom = old[3]
 	Left = old[0]
+	if BoxelSize == 1:
+		boxels[0][0].Top = Top
+		boxels[0][0].Left = Left
+		boxels[0][0].Right = Right
+		boxels[0][0].Bottom = Bottom
+	elif BoxelSize == 2:
+		if Top:
+			boxels[1][0].Top = Top
+			boxels[0][0].Top = Top
+		if Left:
+			boxels[0][1].Left = Left
+			boxels[0][0].Left = Left
+		if Right:
+			boxels[1][1].Right = Right
+			boxels[1][0].Right = Right
+		if Bottom:
+			boxels[0][1].Bottom = Bottom
+			boxels[1][1].Bottom = Bottom
 
 #move on to the next floor!
 func _advance(body):
