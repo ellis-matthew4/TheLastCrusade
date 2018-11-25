@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Martyr.ogg-b2c4c2fbaf7fed2feebad1de64a61202.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Hymns/Martyr.ogg"
+dest_files=[ "res://.import/Martyr.ogg-b2c4c2fbaf7fed2feebad1de64a61202.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

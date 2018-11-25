@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/March_On.ogg-cf9b98369e7deb7f0aa26873e405186d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Hymns/March_On.ogg"
+dest_files=[ "res://.import/March_On.ogg-cf9b98369e7deb7f0aa26873e405186d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -103,7 +103,7 @@ func genFloor():
 				increasePathLength()
 				rooms.append(r) 
 		else:
-			queue.pop()
+			queue.pop_front()
 
 func increasePathLength():
 	for b in queue:
@@ -182,7 +182,7 @@ func possiblePositionsTop(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsBottom(k, l, BoxelSize):
-	# print("Checking possible bottom positions for room " + k.type)
+	print("Checking possible bottom positions for boxel...")
 	var possible = []
 	var pos = getPos(k)
 	for offset in range(BoxelSize):
@@ -205,7 +205,7 @@ func possiblePositionsBottom(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsLeft(k, l, BoxelSize):
-	print("Checking possible left positions for room " + k.type)
+	print("Checking possible bottom positions for boxel...")
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x - BoxelSize, k.BoxelPosition.y - offset)
@@ -226,7 +226,7 @@ func possiblePositionsLeft(k, l, BoxelSize):
 	
 # take in the current boxel, the room type, and the boxelsize
 func possiblePositionsRight(k, l, BoxelSize):
-	print("Checking possible right positions for room " + k.type)
+	print("Checking possible bottom positions for boxel...")
 	var possible = []
 	for offset in range(BoxelSize):
 		var temp = Vector2(k.BoxelPosition.x + 1, k.BoxelPosition.y - offset)
@@ -248,7 +248,7 @@ func possiblePositionsRight(k, l, BoxelSize):
 
 # Checks to see if the room's open connections lead to a valid location
 func connectionsOpen(k):
-	print("Checking open connections for room " + k.type)
+	print("Checking possible bottom positions for boxel...")
 	for y in range(k.BoxelSize):
 		for x in range(k.BoxelSize):
 			# check only the outer perimeter of the room

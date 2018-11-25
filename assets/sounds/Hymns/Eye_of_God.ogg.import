@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Eye_of_God.ogg-36226417bfb2fe1df50e1b8d152d4b9d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Hymns/Eye_of_God.ogg"
+dest_files=[ "res://.import/Eye_of_God.ogg-36226417bfb2fe1df50e1b8d152d4b9d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
