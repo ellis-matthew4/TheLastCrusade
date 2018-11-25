@@ -1,45 +1,62 @@
 extends Node2D
 
-var Boxel = load("res://assets/scripts/boxel.gd")
+var Boxel = preload("res://assets/scenes/Boxel.tscn")
 
 export(Vector2) var BoxelPosition
 export(int) var BoxelSize
-export(int) var TileSize
+export(bool) var Top = false
+export(bool) var Right = false
+export(bool) var Bottom = false
+export(bool) var Left = false
+export var type = ""
+var active = false
+var TileSize = 16
 
 var boxels = []
 
-func initBoxels(size):
-	BoxelSize = size
-	for i in range(BoxelSize):
-		var b = []
-		for j in range(BoxelSize):
-			var box = Boxel.instance()
-			box.active = true
-			b.append(box)
-		boxels.append(b)
-
-
 func _ready():
-	pass
+	assignBoxels()
+	for list in boxels:
+		for b in list:
+			add_child(b)
 
 func rotate():
 	rotation_degrees -= 90
-	# rotates the entire array of boxels
-	for x in range(int(BoxelSize/2)):
-		for y in range(x, BoxelSize-x-1):
-			var temp = boxels[x][y]
-			boxels[x][y] = boxels[y][BoxelSize-1-x]
-			boxels[y][BoxelSize-1-x] = boxels[BoxelSize-1-x][BoxelSize-1-y]
-			boxels[BoxelSize-1-y][x] = temp
-	# rotates each boxel's set of connections
-	for y in range(BoxelSize):
-		for x in range(BoxelSize):
-			var old = [boxels[x][y].Top, boxels[x][y].Right, boxels[x][y].Bottom, boxels[x][y].Left ]
-			boxels[x][y].Top = old[1]
-			boxels[x][y].Right = old[2]
-			boxels[x][y].Bottom = old[3]
-			boxels[x][y].Left = old[0]
+	var old = [ Top, Right, Bottom, Left ]
+	Top = old[1]
+	Right = old[2]
+	Bottom = old[3]
+	Left = old[0]
+	assignBoxels()
+	
+func toString():
+	print("This is a room!")
+	
+func assignBoxels():
+	if BoxelSize == 1:
+		position += Vector2(128,128)
+		boxels.append([Boxel.instance()])
+		boxels[0][0].Top = Top
+		boxels[0][0].Left = Left
+		boxels[0][0].Right = Right
+		boxels[0][0].Bottom = Bottom
+	elif BoxelSize == 2:
+		boxels.append([Boxel.instance(), Boxel.instance()])
+		boxels.append([Boxel.instance(), Boxel.instance()])
+		if Top:
+			boxels[1][0].Top = true
+			boxels[0][0].Top = true
+		if Left:
+			boxels[0][1].Left = true
+			boxels[0][0].Left = true
+		if Right:
+			boxels[1][1].Right = true
+			boxels[1][0].Right = true
+		if Bottom:
+			boxels[0][1].Bottom = true
+			boxels[1][1].Bottom = true
 
 #move on to the next floor!
 func _advance(body):
 	pass # replace with function body
+	

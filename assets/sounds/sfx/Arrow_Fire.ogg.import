@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Arrow_Fire.ogg-ea668b581fdd8bc75b070e552671179d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Arrow_Fire.ogg"
+dest_files=[ "res://.import/Arrow_Fire.ogg-ea668b581fdd8bc75b070e552671179d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,28 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/scripts/room.gd" type="Script" id=1]
-[ext_resource path="res://roomOutline.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/tiles/tiles.tres" type="TileSet" id=2]
 
-[node name="hallway2Opposite" type="Node2D" index="0"]
+[node name="hallway2Opposite" type="Node2D"]
 
 script = ExtResource( 1 )
 BoxelPosition = null
 BoxelSize = 1
 Top = true
-Right = null
+Right = false
 Bottom = true
-Left = null
+Left = false
+type = "H2O"
 
-[node name="outline" parent="." index="0" instance=ExtResource( 2 )]
-
-visible = false
-
-[node name="ground" type="TileMap" parent="." index="1"]
+[node name="ground" type="TileMap" parent="." index="0"]
 
 position = Vector2( -256, -256 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -40,11 +36,11 @@ format = 1
 tile_data = PoolIntArray( 7, 67, 0, 8, 67, 0, 65543, 26, 0, 65544, 26, 0, 131079, 26, 0, 131080, 26, 0, 196615, 26, 0, 196616, 26, 0, 262151, 26, 0, 262152, 26, 0, 327687, 26, 0, 327688, 26, 0, 393223, 26, 0, 393224, 26, 0, 458759, 26, 0, 458760, 26, 0, 524295, 26, 0, 524296, 26, 0, 589831, 26, 0, 589832, 26, 0, 655367, 26, 0, 655368, 26, 0, 720903, 26, 0, 720904, 26, 0, 786439, 26, 0, 786440, 26, 0, 851975, 26, 0, 851976, 26, 0, 917511, 26, 0, 917512, 26, 0, 983047, 68, 0, 983048, 68, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="dec" type="TileMap" parent="." index="2"]
+[node name="dec" type="TileMap" parent="." index="1"]
 
 position = Vector2( -256, -256 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -62,7 +58,7 @@ format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 editor/display_folded = true
 input_pickable = false

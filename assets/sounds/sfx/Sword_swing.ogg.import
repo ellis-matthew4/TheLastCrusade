@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sword_swing.ogg-e92825dd4fe3c80d40620ad0e8eed780.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Sword_swing.ogg"
+dest_files=[ "res://.import/Sword_swing.ogg-e92825dd4fe3c80d40620ad0e8eed780.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
