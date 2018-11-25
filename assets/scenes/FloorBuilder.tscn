@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/scripts/floorbuilder.gd" type="Script" id=1]
 
-[node name="FloorBuilder" type="Node2D" index="0"]
+[node name="FloorBuilder" type="Node2D"]
 
 script = ExtResource( 1 )
 

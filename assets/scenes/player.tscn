@@ -1,26 +1,26 @@
 [gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://assets/char/crusader_left1.png" type="Texture" id=2]
-[ext_resource path="res://assets/char/crusader_left2.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/crusader_left3.png" type="Texture" id=4]
-[ext_resource path="res://assets/char/crusader_left4.png" type="Texture" id=5]
-[ext_resource path="res://assets/char/crusader_up1.png" type="Texture" id=6]
-[ext_resource path="res://assets/char/crusader_up2.png" type="Texture" id=7]
-[ext_resource path="res://assets/char/crusader_up3.png" type="Texture" id=8]
-[ext_resource path="res://assets/char/crusader_up4.png" type="Texture" id=9]
-[ext_resource path="res://assets/char/crusader_downLeft1.png" type="Texture" id=10]
-[ext_resource path="res://assets/char/crusader_downLeft2.png" type="Texture" id=11]
-[ext_resource path="res://assets/char/crusader_downLeft3.png" type="Texture" id=12]
-[ext_resource path="res://assets/char/crusader_downLeft4.png" type="Texture" id=13]
-[ext_resource path="res://assets/char/crusader_upLeft1.png" type="Texture" id=14]
-[ext_resource path="res://assets/char/crusader_upLeft2.png" type="Texture" id=15]
-[ext_resource path="res://assets/char/crusader_upLeft3.png" type="Texture" id=16]
-[ext_resource path="res://assets/char/crusader_upLeft4.png" type="Texture" id=17]
-[ext_resource path="res://assets/char/crusader_down1.png" type="Texture" id=18]
-[ext_resource path="res://assets/char/crusader_down2.png" type="Texture" id=19]
-[ext_resource path="res://assets/char/crusader_down3.png" type="Texture" id=20]
-[ext_resource path="res://assets/char/crusader_down4.png" type="Texture" id=21]
+[ext_resource path="res://assets/char/crusader_up1.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/crusader_up2.png" type="Texture" id=3]
+[ext_resource path="res://assets/char/crusader_up3.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/crusader_up4.png" type="Texture" id=5]
+[ext_resource path="res://assets/char/crusader_left1.png" type="Texture" id=6]
+[ext_resource path="res://assets/char/crusader_left2.png" type="Texture" id=7]
+[ext_resource path="res://assets/char/crusader_left3.png" type="Texture" id=8]
+[ext_resource path="res://assets/char/crusader_left4.png" type="Texture" id=9]
+[ext_resource path="res://assets/char/crusader_upLeft1.png" type="Texture" id=10]
+[ext_resource path="res://assets/char/crusader_upLeft2.png" type="Texture" id=11]
+[ext_resource path="res://assets/char/crusader_upLeft3.png" type="Texture" id=12]
+[ext_resource path="res://assets/char/crusader_upLeft4.png" type="Texture" id=13]
+[ext_resource path="res://assets/char/crusader_down1.png" type="Texture" id=14]
+[ext_resource path="res://assets/char/crusader_down2.png" type="Texture" id=15]
+[ext_resource path="res://assets/char/crusader_down3.png" type="Texture" id=16]
+[ext_resource path="res://assets/char/crusader_down4.png" type="Texture" id=17]
+[ext_resource path="res://assets/char/crusader_downLeft1.png" type="Texture" id=18]
+[ext_resource path="res://assets/char/crusader_downLeft2.png" type="Texture" id=19]
+[ext_resource path="res://assets/char/crusader_downLeft3.png" type="Texture" id=20]
+[ext_resource path="res://assets/char/crusader_downLeft4.png" type="Texture" id=21]
 [ext_resource path="res://assets/font/AlbertText-Bold.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://assets/scenes/PauseMenu.tscn" type="PackedScene" id=23]
 
@@ -29,27 +29,27 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "up",
+"name": "left",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "downLeft",
+"name": "upLeft",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "upLeft",
+"name": "down",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "down",
+"name": "downLeft",
 "speed": 10.0
 } ]
 
@@ -134,7 +134,7 @@ use_filter = true
 font_data = ExtResource( 22 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="player" type="KinematicBody2D" groups=[
+[node name="player" type="KinematicBody2D" index="0" groups=[
 "pc",
 ]]
 
@@ -160,7 +160,7 @@ shape = SubResource( 2 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
