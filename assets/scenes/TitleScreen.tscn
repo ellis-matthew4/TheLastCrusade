@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/Title_Screen.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/sprites/Quit.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/Quit_hover.png" type="Texture" id=6]
 [ext_resource path="res://assets/font/AlbertText-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/sprites/PSB.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -16,7 +17,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="TitleScreen" type="CanvasLayer"]
+[node name="TitleScreen" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -102,10 +103,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 819.0
-margin_top = 639.0
-margin_right = 1190.0
-margin_bottom = 683.0
+margin_left = 762.0
+margin_top = 634.0
+margin_right = 1245.0
+margin_bottom = 678.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -113,11 +114,79 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "WASD: Move   SPACE: Attack"
+text = "WASD: Move   SPACE/CLICK: Attack"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="Sprite2" type="Sprite" parent="Control" index="4"]
+
+position = Vector2( 48.5977, 671.374 )
+texture = ExtResource( 8 )
+
+[node name="Label2" type="Label" parent="Control" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 107.0
+margin_top = 661.0
+margin_right = 383.0
+margin_bottom = 675.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Programmers: Matthew Ellis and Gavin Kerr"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Control/Label2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Art and Music: Evan Giles"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Control/Label2/Label" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 18.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Voice Work: Matthew Ellis"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_Play_pressed"]
 
